@@ -5,7 +5,27 @@ angular.module('coAppApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    },
+    {
+      'title': 'Manager In',
+      'link': '/managerIn'
+    },
+    {
+      'title': 'Manager Out',
+      'link': '/managerOut'
+    }
+
+    // submenu: [
+    //     {
+    //       'title': 'Manager In',
+    //       'link': '/managerIn'
+    //     },
+    //     {
+    //       'title': 'Manager Out',
+    //       'link': '/managerOut'
+    //     }
+    //   ];
+    ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
