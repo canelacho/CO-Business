@@ -16,20 +16,20 @@ var managerOutSchema = mongoose.Schema({
 	date: { type: Date, default: Date.now },
 });
 
-// var listInManager = mongoose.Schema({
-// 	step: 'number',
-// 	action: 'String',
-// 	info: 'String'
-// });
+var listInManager = mongoose.Schema({
+	step: 'number',
+	action: 'String',
+	info: 'String'
+});
 
-// var listOutManager = mongoose.Schema({
-// 	step: 'number',
-// 	action: 'String',
-// 	info: 'String'
-// });
+var listOutManager = mongoose.Schema({
+	step: 'number',
+	action: 'String',
+	info: 'String'
+});
 
-// var users
+var users
 
-// var roles
+var roles
 
-// var messages
+var messages
