@@ -1,0 +1,35 @@
+var managerIn = mongoose.model('ManagerIn', managerInSchema);
+var managerInSchema = mongoose.Schema({
+	author: 'String',
+	list: [
+		{check: 'Boolean', comment: 'String', img: 'String'}
+	],
+	date: { type: Date, default: Date.now },
+});
+
+var managerOut = mongoose.model('ManagerOut', managerOutSchema);
+var managerOutSchema = mongoose.Schema({
+	author: 'String',
+	list: [
+		{check: 'Boolean', comment: 'String', img: 'String'}
+	],
+	date: { type: Date, default: Date.now },
+});
+
+// var listInManager = mongoose.Schema({
+// 	step: 'number',
+// 	action: 'String',
+// 	info: 'String'
+// });
+
+// var listOutManager = mongoose.Schema({
+// 	step: 'number',
+// 	action: 'String',
+// 	info: 'String'
+// });
+
+// var users
+
+// var roles
+
+// var messages
