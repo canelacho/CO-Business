@@ -2,18 +2,19 @@
 
 angular.module('coAppApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    },
-    {
-      'title': 'Manager In',
-      'link': '/managerIn'
-    },
-    {
-      'title': 'Manager Out',
-      'link': '/managerOut'
-    }
+    $scope.menu = [
+      // {
+      //   'title': 'Home',
+      //   'link': '/'
+      // },
+      {
+        'title': 'Manager In',
+        'link': '/managerIn'
+      },
+      {
+        'title': 'Manager Out',
+        'link': '/managerOut'
+      }
 
     // submenu: [
     //     {
