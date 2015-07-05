@@ -1,4 +1,46 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+  });
+</script>
+
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="col-md-12">
-This is the managerIn view.
+
+
+ <div class="" style="margin-top:6px">
+    <button class="btn btn-danger" ng-click="checarBoton=false"><span class="glyphicon glyphicon-remove-circle"><span></button>
+    <button class="btn btn-success" ng-click="checarBoton=true" ng-hide="true"><span class="glyphicon glyphicon-ok"><span></button>
+    <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"><span></button>
+    <button class="btn btn-info"><span class="glyphicon glyphicon-camera"><span></button>
+    <button class="btn btn-warning"
+    data-container="body" data-toggle="popover" data-placement="bottom" data-content="A la apertura del local solo se deben encender las luces que están en medio del pasillo principal del local, dejando sin encender las que están a los lados (estás lucen se encienden después de las 5:00pm).  Y luego el resto de las luces en pasillo hacia la cocina y cocina."
+    ><span class="glyphicon glyphicon-info-sign"><span></button>
+
+    <label> - Encedido de luces.</label>
+  <div ng-show="tooltip=false">Encedido de luces.</div>
+ </div>
+ <div class="" style="margin-top:6px">
+    <button class="btn btn-danger" ng-click="checarBoton=false"><span class="glyphicon glyphicon-remove-circle"><span></button>
+    <button class="btn btn-success" ng-click="checarBoton=true" ng-hide="true"><span class="glyphicon glyphicon-ok"><span></button>
+    <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"><span></button>
+    <button class="btn btn-info"><span class="glyphicon glyphicon-camera"><span></button>
+    <button class="btn btn-warning"
+    data-container="body" data-toggle="popover" data-placement="bottom" data-content="A la apertura del local solo se deben encender las luces que están en medio del pasillo principal del local, dejando sin encender las que están a los lados (estás lucen se encienden después de las 5:00pm).  Y luego el resto de las luces en pasillo hacia la cocina y cocina."
+    ><span class="glyphicon glyphicon-info-sign"><span></button>
+    <label> - Marcado de entrada.</label>
+  <div ng-show="tooltip=false">Encedido de luces.</div>
+ </div>
+
+ <div class="" style="margin-top:6px">
+    <button class="btn btn-danger" ng-click="checarBoton=false"><span class="glyphicon glyphicon-remove-circle"><span></button>
+    <button class="btn btn-success" ng-click="checarBoton=true" ng-hide="true"><span class="glyphicon glyphicon-ok"><span></button>
+    <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"><span></button>
+    <button class="btn btn-info"><span class="glyphicon glyphicon-camera"><span></button>
+    <button class="btn btn-warning"
+    data-container="body" data-toggle="popover" data-placement="bottom" data-content="A la apertura del local solo se deben encender las luces que están en medio del pasillo principal del local, dejando sin encender las que están a los lados (estás lucen se encienden después de las 5:00pm).  Y luego el resto de las luces en pasillo hacia la cocina y cocina."
+    ><span class="glyphicon glyphicon-info-sign"><span></button>
+    <label> - Limpieza en parte delanter.</label>
+  <div ng-show="tooltip=false">Encedido de luces.</div>
+ </div>
 </div>

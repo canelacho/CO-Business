@@ -21,3 +21,8 @@
 .modal-danger .modal-header {
   background: #d9534f;
 }
+
+body {
+  background-color: rgb(227,5,19);
+  color: #ffffff;
+}

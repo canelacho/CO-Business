@@ -1,4 +1,8 @@
 
+body {
+  background-color: red;
+}
+
 .btn-google-plus {
   color: #fff;
   background-color: #dd4b39;
@@ -9,4 +13,8 @@
   color: #fff;
   background-color: #fafafa;
   border-color: #ccc;
+}
+
+#error {
+  color: #ccc;
 }
