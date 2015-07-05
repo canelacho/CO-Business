@@ -1,5 +1,6 @@
 .navbar {
   background: black;
+  font-size: 11px;
 }
 
 .navbar-default .navbar-brand {
@@ -34,4 +35,13 @@
 
 .navbar-header > a:focus.navbar-brand {
   color: red;
+}
+
+.navbar-default .navbar-text {
+  color: orange;
+  text-align: right;
+  position: relative;
+  margin-right: 0px;
+  margin-left: 0px;
+  font-size: 14px;
 }
