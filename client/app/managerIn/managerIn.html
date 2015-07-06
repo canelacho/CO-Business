@@ -8,7 +8,7 @@
  <div class="container">
     <button class="btn btn-danger" ng-click="checarBoton=false"><span class="glyphicon glyphicon-remove-circle"></span></button>
     <button class="btn btn-success" ng-click="checarBoton2=true" ng-hide="true"><span class="glyphicon glyphicon-ok"></span></button>
-    <button class="btn btn-primary" ng-click="commit(true)" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{text.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
     <buttom class="btn btn-info"><span class="glyphicon glyphicon-camera"></span></buttom>
     <button class="btn btn-warning" data-toggle="modal" data-target="#myModal{{text.step}}"><span class="glyphicon glyphicon-info-sign"><span></button>
     <label> - {{text.action}}: </label>
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="collapse" id="collapseExample" style="margin-top:5px;">
+    <div class="collapse" id="collapse{{text.step}}" style="margin-top:5px;">
       <div class="well" style="background-color:#428bca; border:0px; padding:10px">
         <input type="text" class="form-control" name="commit" value="">
       </div>
