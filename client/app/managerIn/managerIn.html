@@ -1,9 +1,8 @@
 
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="">{{ checklistIn[0].item }}</div>
-
-<div class="col-md-12"  style="padding-top:5px;"ng-repeat="text in checklistIn">
+<h2>{{ checklistTitle }}</h2>
+<div class="col-md-12"  style="padding-top:5px;" ng-repeat="text in checklistIn">
 
  <div class="container">
     <button class="btn btn-danger" ng-click="checarBoton($mostrar)" ng-show="mostrarStep"><span class="glyphicon glyphicon-remove-circle"></span></button>

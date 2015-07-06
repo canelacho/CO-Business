@@ -4,7 +4,7 @@ angular.module('coAppApp')
   .controller('ManagerInCtrl', function ($scope) {
     // $scope.message = 'Hello';
 
-    $scope.chechlistTitle = 'CHECKLIST APERTURA GERENTE';
+    $scope.checklistTitle = 'CHECKLIST APERTURA GERENTE';
     $scope.checklistIn = [
       { step: 1, action: 'ENCENDIDO DE LUCES', info: 'A la apertura del local solo se deben encender las luces que est·n en medio del pasillo principal del local, dejando sin encender las que est·n a los lados (est·s lucen se encienden despuÈs de las 5:00pm).  Y luego el resto de las luces en pasillo hacia la cocina y cocina.'},
       { step: 2, action: 'MARCADO DE ENTRADA', info: 'Al ingresar al local se debe marcar la entrada en el dispositivo junto a la oficina. Al momento de marcar la entrada todos los colaboradores deben empezar sus labores diarias.'},
