@@ -1,14 +1,9 @@
-
 <div ng-include="'components/navbar/navbar.html'"></div>
-
-<div class="col-md-12" ng-app="">
-
 
  <div class="container">
 
    <h2> {{ chechlistTitle }} </h2>
-    <h1>{{ checklistOut[1].description }}</h1>
-
+   
    <ul ng-repeat="task in checklistOut track by $index">
      <li>
        <button class="btn btn-danger" ng-click="checarBoton=false"><span class="glyphicon glyphicon-remove-circle"></span></button>
@@ -16,7 +11,7 @@
        <button class="btn btn-primary" ng-click="commit(true)"><span class="glyphicon glyphicon-pencil"></span></button>
        <button class="btn btn-info"><span class="glyphicon glyphicon-camera"></span></button>
        <button class="btn btn-warning" data-toggle="modal" data-target="#{{ task.step }}"><span class="glyphicon glyphicon-info-sign"><span></button>
-       <label> - <p>{{ task.action }}</p></label>
+       <label>{{ task.action }}</label>
 
        <div class="modal fade" id="{{ task.step }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
          <div class="modal-dialog" role="document">
