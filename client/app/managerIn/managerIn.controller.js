@@ -29,11 +29,6 @@ angular.module('coAppApp')
       // { item: 'hola', description: ''},
     ];
 
-    var mostrarStep = true;
 
-    function checarBoton(mostrar){
-      console.log($mostrar);
-      mostrarStep = $mostrar;
-    };
-
+  
   });
