@@ -30,5 +30,10 @@ angular.module('coAppApp')
     ];
 
 
-  
+    $scope.formData = {};
+    $scope.submitForm = function (formData) {
+      console.log(JSON.stringify(formData));
+     alert('Formulario enviado con ' + JSON.stringify(formData));
+     };
+
   });

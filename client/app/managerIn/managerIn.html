@@ -4,32 +4,36 @@
 <div class="container">
 
 <h2>{{ checklistTitle }}</h2>
+<form name='managerInForm' novalidate>
+  <div class="col-md-12"  style="padding-top:5px;" data-ng-repeat="text in checklistIn track by $index" data-ng-init="btnVisibility = true">
+      <button class="btn btn-danger" data-ng-click="btnVisibility = !btnVisibility" data-ng-show="btnVisibility"><span class="glyphicon glyphicon-remove-circle"></span></button>
+      <button class="btn btn-success" data-ng-click="btnVisibility = !btnVisibility" data-ng-hide="btnVisibility" required><span class="glyphicon glyphicon-ok"></span></button>
 
-<div class="col-md-12"  style="padding-top:5px;" ng-repeat="text in checklistIn track by $index" ng-init="btnVisibility = true">
-    <button class="btn btn-danger" ng-click="btnVisibility = !btnVisibility" ng-show="btnVisibility"><span class="glyphicon glyphicon-remove-circle"></span></button>
-    <button class="btn btn-success" ng-click="btnVisibility = !btnVisibility" ng-hide="btnVisibility"><span class="glyphicon glyphicon-ok"></span></button>
+      <button class="btn btn-primary btn-file" type="button" data-toggle="collapse" data-target="#collapse{{text.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <button class="btn btn-info" type="file"><span class="glyphicon glyphicon-camera"></button>
+      <button class="btn btn-warning" data-toggle="modal" data-target="#myModal{{text.step}}"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <label> - {{text.action}} </label>
 
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{text.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
-    <buttom class="btn btn-info"><span class="glyphicon glyphicon-camera"></span></buttom>
-    <button class="btn btn-warning" data-toggle="modal" data-target="#myModal{{text.step}}"><span class="glyphicon glyphicon-info-sign"><span></button>
-    <label> - {{text.action}} </label>
-
-    <div class="modal fade" id="myModal{{text.step}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body" style="color:grey;">
-            <strong> {{text.action}} :</strong><br>
-            {{ text.info }}
-          </div>
+      <div class="modal fade" id="myModal{{text.step}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body" style="color:grey;">
+              <strong> {{text.action}} :</strong><br>
+              {{ text.info }}
+            </div>
+        </div>
+        </div>
       </div>
-      </div>
-    </div>
 
-    <div class="collapse" id="collapse{{text.step}}" style="margin-top:5px;">
-      <div class="well" style="background-color:#428bca; border:0px; padding:10px">
-        <input type="text" class="form-control" name="commit" value="">
+      <div class="collapse" id="collapse{{text.step}}" style="margin-top:5px;">
+        <div class="well" style="background-color:#428bca; border:0px; padding:10px">
+          <input type="text" class="form-control" name="commit" value="">
+        </div>
       </div>
-    </div>
+      <span data-ng-show="!exampleForm.$pristine && exampleForm.commit.$error.required">Detalle es requerido.</span>
 
- </div>
+   </div>
+   <buttom class='btn btn-success pull-left' data-ng-click='submit(managerInForm)'>Test</button>
+
+</form>
  </div>
