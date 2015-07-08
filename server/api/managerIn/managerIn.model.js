@@ -3,12 +3,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-// var ManagerInSchema = new Schema({
-//   name: String,
-//   info: String,
-//   active: Boolean
-// });
-
 var ManagerInSchema = new Schema({
   	author: 'String',
   	list: [
@@ -16,6 +10,5 @@ var ManagerInSchema = new Schema({
   	],
   	date: { type: Date, default: Date.now },
 });
-
 
 module.exports = mongoose.model('ManagerIn', ManagerInSchema);
