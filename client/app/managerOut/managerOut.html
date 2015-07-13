@@ -6,6 +6,11 @@
 
    <!-- <button ng-if="!boolean" class="btn btn-danger" ng-click="checkToggle()" ><span class="glyphicon glyphicon-remove-circle"></span></button>
    <button ng-if="boolean" class="btn btn-success" ng-click="checkToggle()" ><span class="glyphicon glyphicon-ok"></span></button> -->
+  <div class="btn-group" data-toggle="buttons">
+     <label class="btn btn-primary">
+       <input type="checkbox" autocomplete="off"> Checkbox 2
+     </label>
+   </div>
 
   <form class="form" name="form" novalidate>
    <ul ng-form="taskForm" ng-repeat="task in checklistOut" ng-init="check=true">
