@@ -7,10 +7,14 @@
 <form name='managerInForm' novalidate>
   <div class="col-md-12"  style="padding-top:5px;" data-ng-repeat="text in checklistIn track by $index" data-ng-init="btnVisibility = true">
       <button class="btn btn-danger" data-ng-click="btnVisibility = !btnVisibility" data-ng-show="btnVisibility"><span class="glyphicon glyphicon-remove-circle"></span></button>
-      <button class="btn btn-success" data-ng-click="btnVisibility = !btnVisibility" data-ng-hide="btnVisibility" required><span class="glyphicon glyphicon-ok"></span></button>
+      <button class="btn btn-success" data-ng-click="btnVisibility = !btnVisibility" data-ng-hide="btnVisibility" title="done_{{$index}}" required><span class="glyphicon glyphicon-ok"></span></button>
 
       <button class="btn btn-primary btn-file" type="button" data-toggle="collapse" data-target="#collapse{{text.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
-      <button class="btn btn-info" type="file"><span class="glyphicon glyphicon-camera"></button>
+
+      <!-- photo button action -->
+      <button class="btn btn-info"><span class="glyphicon glyphicon-camera"></span></button>
+
+
       <button class="btn btn-warning" data-toggle="modal" data-target="#myModal{{text.step}}"><span class="glyphicon glyphicon-info-sign"><span></button>
       <label> - {{text.action}} </label>
 
@@ -21,19 +25,21 @@
               <strong> {{text.action}} :</strong><br>
               {{ text.info }}
             </div>
-        </div>
+          </div>
         </div>
       </div>
 
       <div class="collapse" id="collapse{{text.step}}" style="margin-top:5px;">
         <div class="well" style="background-color:#428bca; border:0px; padding:10px">
-          <input type="text" class="form-control" name="commit" value="">
+          <input type="text" class="form-control" name="commit_{{$index}}" value="">
         </div>
       </div>
-      <span data-ng-show="!exampleForm.$pristine && exampleForm.commit.$error.required">Detalle es requerido.</span>
 
    </div>
-   <buttom class='btn btn-success pull-left' data-ng-click='submit(managerInForm)'>Test</button>
 
+    <buttom class='btn btn-success pull-left' data-ng-click='submit(managerInForm, $index)'>Test</button>
 </form>
+</div>
+
+
  </div>
