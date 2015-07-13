@@ -94,14 +94,11 @@ angular.module('coAppApp')
           //   console.log(comment);
           // };
 
-          console.log(check)
+          var commentArray = $("input[id='comment']").serializeArray();
+          console.log(commentArray);
 
-          var commentArray = [];
-          $("button[name='check']").each(function() {
-            console.log(this.value);
-          });
-          $("input[name='comment']").each(function() {
-            console.log(this.value);
+          $(commentArray).each(function() {
+            console.log(this.name + " " + this.value);
           });
 
           // angular.forEach(check, )

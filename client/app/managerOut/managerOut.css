@@ -1,3 +1,7 @@
 ul {
   list-style: none;
 }
+
+label.btn.btn-primary.active {
+  background: green;
+}
