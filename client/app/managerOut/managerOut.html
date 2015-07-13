@@ -7,7 +7,7 @@
    <!-- <button ng-if="!boolean" class="btn btn-danger" ng-click="checkToggle()" ><span class="glyphicon glyphicon-remove-circle"></span></button>
    <button ng-if="boolean" class="btn btn-success" ng-click="checkToggle()" ><span class="glyphicon glyphicon-ok"></span></button> -->
 
-  <form class="form" name="form" ng-submit="newClose()" novalidate>
+  <form class="form" name="form" novalidate>
    <ul ng-form="taskForm" ng-repeat="task in checklistOut" ng-init="check=true">
      <li>
        <button ng-show="check" class="btn btn-danger" ng-click="check=!check" ><span class="glyphicon glyphicon-remove-circle"></span></button>
@@ -42,7 +42,7 @@
    </ul>
 
    <br>
-   <button class="btn btn-primary" type="submit">Guardar</button>
+   <button class="btn btn-primary" ng-submit="newClose()">Guardar</button>
  </form>
 
 
