@@ -16,6 +16,10 @@ var managerOutSchema = mongoose.Schema({
 	date: { type: Date, default: Date.now },
 });
 
+tasksSchema
+{ step: 25, action: "", info: ""}
+
+
 var listInManager = mongoose.Schema({
 	step: 'number',
 	action: 'String',

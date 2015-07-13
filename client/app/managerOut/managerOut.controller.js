@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('ManagerOutCtrl', function ($scope, $http) {
+  .controller('ManagerOutCtrl', function ($scope, $http, Auth) {
 
     $scope.checklistTitle = 'CHECKLIST CIERRE GERENTE';
     $scope.checklistOut = [
@@ -56,9 +56,6 @@ angular.module('coAppApp')
     // { step: 25, action: "", info: ""},
     ];
 
-
-
-
         // Toggle check button with ngIf
         // $scope.checkToggle = function() {
         //   if ($scope.boolean == false) {
@@ -68,31 +65,78 @@ angular.module('coAppApp')
         //   }
         // };
 
-
-
-        $scope.formData = {};
-        $scope.formData.checklistOut = $scope.checklistOut
-
-        // $scope.newCierre = function() {
-        //   angular.forEach(checklistOut, function(task, index) {
-        //
-        //   });
+        // Schema model
+        // var ManagerOut = {
+        //     author: 'String',
+        //     list: [
+        //       {check: 'Boolean', comment: 'String', img: 'String'}
+        //     ],
+        //   	date: { type: Date, default: Date.now },
         // };
 
 
 
+        var close = [{
+          check: 'Boolean',
+          comment: 'String',
+          img: 'String'
+        },
+        {
+          check: 'Boolean',
+          comment: 'String',
+          img: 'String'
+        }
+        ];
 
-        // Schema model
-        var ManagerOut = {
-          	author: 'String',
-          	list: [
-          		{check: 'Boolean', comment: 'String', img: 'String'}
-          	],
-          	date: { type: Date, default: Date.now },
+        $scope.close = close;
+
+        $scope.managerOut = {};
+        $scope.managerOut.taskForm = close;
+        $scope.errors = {};
+        $scope.getCurrentUser = Auth.getCurrentUser().name;
+
+        var check;
+        check = document.getElementsByName('check');
+        var comment = document.getElementsByName('comment');
+        var img = document.getElementsByName('img');
+
+
+
+        $scope.newClose = function(index) {
+          // $scope.submitted = true;
+          console.log(comment);
+          // for ( var i = 0; i < comment.length ; i++){
+          //   console.log(comment);
+          // };
+
+          var commentArray = $("input[name='comment']").each(function() {
+            console.log(this.val);
+          })
+
+          // angular.forEach(check, )
+
+          if (Auth.isLoggedIn) {
+            console.log('Logged in as ' + $scope.getCurrentUser);
+
+            // var temp;
+            // angular.forEach($scope.newClose, function (task, index) {
+            //   temp = angular.toJson($scope.newClose.taskForm_[0]);
+            //   console.log(temp);
+            // });
+
+
+          }
         };
 
+        // New Thing from Main example
+        // $scope.addThing = function() {
+        //   if($scope.newThing === '') {
+        //     return;
+        //   }
+        //   $http.post('/api/things', { name: $scope.newThing });
+        //   $scope.newThing = '';
+        // };
 
-
-        console.log($scope.formData.checklistOut);
+        // console.log();
 
   });

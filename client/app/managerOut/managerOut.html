@@ -7,17 +7,21 @@
    <!-- <button ng-if="!boolean" class="btn btn-danger" ng-click="checkToggle()" ><span class="glyphicon glyphicon-remove-circle"></span></button>
    <button ng-if="boolean" class="btn btn-success" ng-click="checkToggle()" ><span class="glyphicon glyphicon-ok"></span></button> -->
 
-  <form name="close">
-   <ul ng-form="CierreForm" ng-repeat="task in checklistOut" ng-init="check=true">
+  <form class="form" name="form" ng-submit="newClose()" novalidate>
+   <ul ng-form="taskForm" ng-repeat="task in checklistOut" ng-init="check=true">
      <li>
        <button ng-show="check" class="btn btn-danger" ng-click="check=!check" ><span class="glyphicon glyphicon-remove-circle"></span></button>
-       <button ng-hide="check" class="btn btn-success" ng-click="check=!check" ><span class="glyphicon glyphicon-ok"></span></button>
-       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{task.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
-       <button class="btn btn-info" name="img"><span class="glyphicon glyphicon-camera"></span></button>
-       <button class="btn btn-warning" data-toggle="modal" data-target= task.step ><span class="glyphicon glyphicon-info-sign"><span></button>
-       <label>{{ task.action }}</label>
+       <button ng-hide="check" class="btn btn-success" ng-click="check=!check" name="check" value="Active"><span class="glyphicon glyphicon-ok"></span></button>
 
-       <div class="modal fade" id=task.step tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{task.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+
+       <button class="btn btn-info" name="image"><span class="glyphicon glyphicon-camera"></span></button>
+
+       <button class="btn btn-warning" data-toggle="modal" data-target="#info{{task.step}}"><span class="glyphicon glyphicon-info-sign"><span></button>
+
+       <label> - {{ task.action }}</label>
+
+       <div class="modal fade" id="info{{task.step}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
                <div class="modal-body" style="color:grey;">
@@ -30,16 +34,17 @@
 
        <div class="collapse" id="collapse{{task.step}}" style="margin-top:5px;">
          <div class="well" style="background-color:#428bca; border:0px; padding:10px">
-           <input ng-model="ManagerOut.list.comment" type="text" class="form-control" name="comment" value="">
+           <input type="text" name="comment" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ task.action }} aqui">
          </div>
        </div>
 
      </li>
    </ul>
+
+   <br>
+   <button class="btn btn-primary" type="submit">Guardar</button>
  </form>
 
-  <br>
-  <button class="btn btn-primary" type="submit" ng-submit="newCierre()">Guardar</button>
 
 
 </div>
