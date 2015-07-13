@@ -102,16 +102,23 @@ angular.module('coAppApp')
 
 
 
-        $scope.newClose = function(index) {
+        $scope.newClose = function(form) {
           // $scope.submitted = true;
-          console.log(comment);
+          // console.log(comment);
           // for ( var i = 0; i < comment.length ; i++){
           //   console.log(comment);
           // };
 
-          var commentArray = $("input[name='comment']").each(function() {
-            console.log(this.val);
-          })
+          var commentArray = [];
+          commentArray = $("input[name='comment']").each(function() {
+            console.log(this.value);
+            var self = this;
+            var value = self.value;
+            return value;
+          });
+
+          console.log(commentArray);
+
 
           // angular.forEach(check, )
 
