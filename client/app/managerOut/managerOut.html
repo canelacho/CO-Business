@@ -11,7 +11,7 @@
    <ul ng-form="taskForm" ng-repeat="task in checklistOut" ng-init="check=true">
      <li>
        <button ng-show="check" class="btn btn-danger" ng-click="check=!check" ><span class="glyphicon glyphicon-remove-circle"></span></button>
-       <button ng-hide="check" class="btn btn-success" ng-click="check=!check" name="check" value="Active"><span class="glyphicon glyphicon-ok"></span></button>
+       <button ng-hide="check" class="btn btn-success" ng-click="check=!check" name="check"><span class="glyphicon glyphicon-ok"></span></button>
 
        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{task.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
 

@@ -74,20 +74,6 @@ angular.module('coAppApp')
         //   	date: { type: Date, default: Date.now },
         // };
 
-
-
-        var close = [{
-          check: 'Boolean',
-          comment: 'String',
-          img: 'String'
-        },
-        {
-          check: 'Boolean',
-          comment: 'String',
-          img: 'String'
-        }
-        ];
-
         $scope.close = close;
 
         $scope.managerOut = {};
@@ -101,7 +87,6 @@ angular.module('coAppApp')
         var img = document.getElementsByName('img');
 
 
-
         $scope.newClose = function(form) {
           // $scope.submitted = true;
           // console.log(comment);
@@ -109,16 +94,15 @@ angular.module('coAppApp')
           //   console.log(comment);
           // };
 
+          console.log(check)
+
           var commentArray = [];
-          commentArray = $("input[name='comment']").each(function() {
+          $("button[name='check']").each(function() {
             console.log(this.value);
-            var self = this;
-            var value = self.value;
-            return value;
           });
-
-          console.log(commentArray);
-
+          $("input[name='comment']").each(function() {
+            console.log(this.value);
+          });
 
           // angular.forEach(check, )
 
