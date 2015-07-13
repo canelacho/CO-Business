@@ -29,11 +29,15 @@ angular.module('coAppApp')
       // { item: 'hola', description: ''},
     ];
 
+    var formController=$scope.managerInForm;
 
     $scope.formData = {};
-    $scope.submitForm = function (formData) {
+    $scope.submit = function (formData, indice) {
+
+      console.log(formController);
+
+      console.log(formData);
       console.log(JSON.stringify(formData));
-     alert('Formulario enviado con ' + JSON.stringify(formData));
      };
 
   });
