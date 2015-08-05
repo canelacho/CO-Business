@@ -5,7 +5,7 @@ angular.module('coAppApp')
 
     $scope.checklistTitle = 'CHECKLIST CIERRE GERENTE';
     $scope.checklistOut = [
-    { step: 1, action: "CIERRE PUERTA PRINCIPAL",
+    { step: 1, action: 'CIERRE PUERTA PRINCIPAL',
     info: "A la hora  de cierre del local (+11:00pm) se debe cerrar la puerta principal, dejando las llaves pegadas en la puerta en caso de que alguien quiera salir y al entrar la vuelva a cerrar. Si al momento de cerrar existen personas en el establecimiento se puede cerrar la puerta principal y se debe estar pendiente para que cada vez que quiera salir las personas se les abra y se cierre de nuevo el local."},
     { step: 2, action: "APAGAR AIRE ACONDICIONADO",
     info: "Una vez cerrada la puerta principal se debe apagar el aire acondicionado. (Si hay clientes apagar después de la salida del último cliente o a más tardar las 12 pm)."},
