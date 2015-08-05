@@ -4,6 +4,14 @@
 <div class="container">
 
 <h2>{{ checklistTitle }}</h2>
+
+<div class="btn-group" data-toggle="buttons">
+   <label class="btn btn-primary">
+     <input type="checkbox" autocomplete="off" name="btnchk"> Checkbox 2
+   </label>
+ </div>
+
+
 <form name='managerInForm' novalidate>
   <div class="col-md-12"  style="padding-top:5px;" data-ng-repeat="text in checklistIn track by $index" data-ng-init="btnVisibility = true">
       <button class="btn btn-danger" data-ng-click="btnVisibility = !btnVisibility" data-ng-show="btnVisibility"><span class="glyphicon glyphicon-remove-circle"></span></button>
@@ -40,6 +48,8 @@
     <buttom class='btn btn-success pull-left' data-ng-click='submit(managerInForm, $index)'>Test</button>
 </form>
 </div>
+
+<input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
 
 
  </div>

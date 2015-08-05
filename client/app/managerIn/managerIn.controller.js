@@ -29,6 +29,8 @@ angular.module('coAppApp')
       // { item: 'hola', description: ''},
     ];
 
+    
+
     var formController=$scope.managerInForm;
 
     $scope.formData = {};

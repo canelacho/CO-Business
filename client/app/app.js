@@ -2,6 +2,7 @@
 
 angular.module('coAppApp', [
   'ngCookies',
+  'flow',
   'ngResource',
   'ngSanitize',
   'btford.socket-io',
