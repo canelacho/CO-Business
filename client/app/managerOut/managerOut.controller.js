@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('ManagerOutCtrl', function ($scope, $http, Auth) {
+  .controller('ManagerOutCtrl', function ($scope, $http, Auth, Upload) {
 
     $scope.checklistTitle = 'CHECKLIST CIERRE GERENTE';
     $scope.checklistOut = [
@@ -81,10 +81,18 @@ angular.module('coAppApp')
         $scope.errors = {};
         $scope.getCurrentUser = Auth.getCurrentUser().name;
 
-        var check;
-        check = document.getElementsByName('check');
-        var comment = document.getElementsByName('comment');
-        var img = document.getElementsByName('img');
+        // var check;
+        // check = document.getElementsByName('check');
+        // var comment = document.getElementsByName('comment');
+        // var img = document.getElementsByName('img');
+
+        // $scope.$watch('file', function (file) {
+        //   if (file === '') {
+        //     return;
+        //     console.log('no file selected');
+        //   }
+        //   console.log('files: ' + file);
+        // });
 
 
         $scope.newClose = function(form) {
@@ -94,12 +102,21 @@ angular.module('coAppApp')
           //   console.log(comment);
           // };
 
-          var commentArray = $("input[id='comment']").serializeArray();
-          console.log(commentArray);
+          var checks = $("input[id='checks']").serializeArray();
+          // console.log(checks);
 
-          $(commentArray).each(function() {
-            console.log(this.name + " " + this.value);
+          var comments = $("input[id='comment']").serializeArray();
+          // console.log(comments);
+          $(comments).each(function() {
+            // console.log(this.name + " " + this.value);
           });
+
+          var imgArray = [];
+          var imgs = $("img[id='img']");
+          jQuery.each(imgs, function(i, img) {
+            console.log(img.name, img.src)
+          });
+          console.log(imgArray);
 
           // angular.forEach(check, )
 
