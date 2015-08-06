@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('ManagerOutCtrl', function ($scope, $http, Auth, Upload) {
+  .controller('ManagerOutCtrl', function ($scope, $http, Auth) {
 
     $scope.checklistTitle = 'CHECKLIST CIERRE GERENTE';
     $scope.checklistOut = [
@@ -104,35 +104,43 @@ angular.module('coAppApp')
 
           // IF not all tasks are perform alert!
           var checks = $("input[id='checks']").serializeArray();
-          // console.log(checks.length);
-          // if (checks.length == 24) {
-          //   console.log('Todas las tareas realizadas');
-          // } else {
-          //   alert("Te faltan " + (24 - checks.length) + " tareas por realizar!");
-          // };
+          console.log(checks.length);
+          if (checks.length < 24) {
+            alert("Te faltan " + (24 - checks.length) + " tareas por realizar!");
+          } else {
+            console.log('Todas las tareas realizadas');
+
+          };
 
           var commentArray = [];
           var comments = $("input[id='comment']").serializeArray();
           // console.log(comments);
-          jQuery.each(comments, function(i, comment) {
-            commentArray.push(comment.value);
-          });
+          angular.forEach(comments, function(i, value) {
+            this.push(i.value)
+          }, commentArray);
           console.log(commentArray);
 
           var imgArray = [];
           // var imgObj;
           var imgs = $("img[id='img']");
-          jQuery.each(imgs, function(i, img) {
-            // console.log(img.name, img.src);
-            imgArray.push(img.src);
-            // imgObj.push({"name":img.name, "url":img.src});
-          });
+          angular.forEach(imgs, function(i, src) {
+            this.push(i.src);
+          }, imgArray);
           console.log(imgArray);
+
+          var imgToDB = fs.readFile(imgArray[0]);
+          console.log(imgToDB);
+
+          // jQuery.each(imgs, function(i, img) {
+          //   // console.log(img.name, img.src);
+          //   imgArray.push(img.src);
+          //   // imgObj.push({"name":img.name, "url":img.src});
+          // });
+          // console.log(imgArray);
           // imgObj = angular.toJson(imgArray);
           // console.log(imgObj);
           // console.log(imgs);
 
-          // angular.forEach(check, )
 
           // if (Auth.isLoggedIn) {
           //   console.log('Logged in as ' + $scope.getCurrentUser);
