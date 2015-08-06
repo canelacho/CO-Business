@@ -29,8 +29,6 @@
          </div>
        </div>
 
-       <img ngf-src="file" name="img{{task.step}}" id="img">
-
        <button class="btn btn-warning" data-toggle="modal" data-target="#info{{task.step}}"><span class="glyphicon glyphicon-info-sign"><span></button>
 
        <label> - {{ task.action }}</label>
@@ -45,6 +43,9 @@
            </div>
          </div>
        </div>
+
+        <!-- image preview -->
+       <img ngf-src="file" name="img{{task.step}}" id="img">
 
        <div class="collapse" id="collapse{{task.step}}" style="margin-top:5px;">
          <div class="well" style="background-color:#428bca; border:0px; padding:10px">

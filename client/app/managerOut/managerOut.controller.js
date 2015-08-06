@@ -102,35 +102,48 @@ angular.module('coAppApp')
           //   console.log(comment);
           // };
 
+          // IF not all tasks are perform alert!
           var checks = $("input[id='checks']").serializeArray();
-          // console.log(checks);
+          // console.log(checks.length);
+          // if (checks.length == 24) {
+          //   console.log('Todas las tareas realizadas');
+          // } else {
+          //   alert("Te faltan " + (24 - checks.length) + " tareas por realizar!");
+          // };
 
+          var commentArray = [];
           var comments = $("input[id='comment']").serializeArray();
           // console.log(comments);
-          $(comments).each(function() {
-            // console.log(this.name + " " + this.value);
+          jQuery.each(comments, function(i, comment) {
+            commentArray.push(comment.value);
           });
+          console.log(commentArray);
 
           var imgArray = [];
+          // var imgObj;
           var imgs = $("img[id='img']");
           jQuery.each(imgs, function(i, img) {
-            console.log(img.name, img.src)
+            // console.log(img.name, img.src);
+            imgArray.push(img.src);
+            // imgObj.push({"name":img.name, "url":img.src});
           });
           console.log(imgArray);
+          // imgObj = angular.toJson(imgArray);
+          // console.log(imgObj);
+          // console.log(imgs);
 
           // angular.forEach(check, )
 
-          if (Auth.isLoggedIn) {
-            console.log('Logged in as ' + $scope.getCurrentUser);
+          // if (Auth.isLoggedIn) {
+          //   console.log('Logged in as ' + $scope.getCurrentUser);
 
             // var temp;
             // angular.forEach($scope.newClose, function (task, index) {
             //   temp = angular.toJson($scope.newClose.taskForm_[0]);
             //   console.log(temp);
             // });
+          // }
 
-
-          }
         };
 
         // New Thing from Main example

@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var ManagerOutSchema = new Schema({
   	author: String,
   	list: [
-  		{check: Boolean, comment: String, img: { data: Buffer, contentType: String }}
+  		{inci: Boolean, comment: String, img: { data: Buffer, contentType: String }}
   	],
   	date: { type: Date, default: Date.now },
 });
