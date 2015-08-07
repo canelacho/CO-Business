@@ -10,3 +10,7 @@ background-color: #ffffff;
 /*para los colores de las filas pares*/
 background:#EDEDED;
 }
+
+#incidencia img{
+  margin-left:30%;
+}

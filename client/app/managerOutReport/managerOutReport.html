@@ -17,7 +17,7 @@
     <td class="text-center"><strong>Novedades</strong></td>
     <td class="text-center"><strong>Ver</strong></td>
   </tr>
-  <tr ng-repeat="registro in dbExample">
+  <tr ng-repeat="registro in dbExample | orderBy:'-fecha' ">
     <td class="text-center">{{registro.fecha}}</td>
     <td class="text-center">{{registro.responsable}}</td>
     <td class="text-center"><span ng-hide="{{ registro.actividad }}" class="glyphicon glyphicon-ok-sign btn btn-success" disabled="disabled"></span>
@@ -27,11 +27,28 @@
     <div class="modal fade" id="myModal{{registro[$index]}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-body" style="color:grey;">
-            Fecha: <strong> {{ fechaCheck }} </strong><br>
-            Autor: <strong> {{ autorCheck }} </strong><br>
-            <h1>Incidencias</h1>
-            {{ muestraValor }}
+          <div class="modal-body" style="color:grey" ng-show="incidencia">
+            Fecha: <strong style="color:red"> {{ fechaCheck }} </strong><br>
+            Autor: <strong style="color:red"> {{ autorCheck }} </strong><br>
+            <hr>
+            <h1>Incidencias registradas</h1>
+            Limpieza papeleras: <br>
+            <strong style="font-size:16px">{{ muestraValor }}</strong><br>
+            <div><img class="img-responsive" ng-src="../assets/images/garbage.jpg"></div><br><br>
+            Verificacion TVs: <br>
+            <strong style="font-size:16px">{{ muestraValor }}</strong><br>
+            <div><img class="img-responsive" ng-src="../assets/images/fuzzy-TV.jpg"></div><br><br>
+            Revision de Puerta: <br>
+            <strong style="font-size:16px">{{ muestraValor }}</strong><br>
+            <div><img class="img-responsive" ng-src="../assets/images/damage-door.jpg"></div><br><br>
+          </div>
+          // no incidents
+          <div class="modal-body" style="color:grey;" ng-show="!incidencia" id="incidencia">
+            Fecha: <strong style="color:red"> {{ fechaCheck }} </strong><br>
+            Autor: <strong style="color:red"> {{ autorCheck }} </strong><br>
+            <hr>
+            <h1>Evento sin incidencias</h1>
+            <img class="img-responsive" width="200px" ng-src="../assets/images/Approved.png" alt="approve-coBusiness">
           </div>
         </div>
       </div>

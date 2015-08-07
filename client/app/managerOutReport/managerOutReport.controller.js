@@ -65,19 +65,31 @@ angular.module('coAppApp')
     $scope.month = mesActual;
     $scope.year = anoActual;
 
-    // Cargar vista modal seleccionada
+    // Load modal view selected
+    var incidencia = true;
     $scope.test = function(valor){
       console.log(valor);
+
+      if ($scope.dbExample[valor].actividad){
+        incidencia = true;
+      } else {
+        incidencia = false;
+      }
+      console.log(incidencia);
+
       $scope.fechaCheck = $scope.dbExample[valor].fecha;
       $scope.autorCheck = $scope.dbExample[valor].responsable;
       $scope.muestraValor = $scope.dbExample[valor].detalle.detalle1;
+      $scope.incidencia = incidencia;
+
     };
+
 
     $scope.dbExample = [
     {
 			fecha:"03-08-2014 11:34",
 			responsable:"Alejandro",
-			actividad:"false",
+			actividad:false,
 			detalle: {
 				detalle1:"detalle1 probando ando",
 				detalle2:"detalle2",
@@ -87,7 +99,7 @@ angular.module('coAppApp')
     {
 			fecha:"02-08-2014 11:34",
 			responsable:"Maribel",
-			actividad:"true",
+			actividad:true,
 			detalle: {
 				detalle1:"detalle1 ivan 2",
 				detalle2:"detalle2",
@@ -97,7 +109,7 @@ angular.module('coAppApp')
      {
 			fecha:"03-08-2014 11:34",
 			responsable:"Manolo",
-			actividad:"false",
+			actividad:false,
 			detalle: {
 				detalle1:"detalle1 manolo 3",
 				detalle2:"detalle2",
