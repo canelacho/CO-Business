@@ -8,6 +8,10 @@ angular.module('coAppApp')
       //   'link': '/'
       // },
       {
+        'title': 'Main',
+        'link': '/wall'
+      },
+      {
         'title': 'Manager In',
         'link': '/managerIn'
       },
