@@ -7,7 +7,7 @@ var ManagerOutSchema = new Schema({
   	author: String,
     inci: Boolean,
   	list: [
-  		{title: String, comment: String, img: { data: Buffer, contentType: String }}
+  		{title: String, comment: String, imgUrl: String }
   	],
   	date: { type: Date, default: Date.now },
 });

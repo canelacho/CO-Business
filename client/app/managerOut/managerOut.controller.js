@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('ManagerOutCtrl', function ($scope, $http, Auth) {
+  .controller('ManagerOutCtrl', function ($scope, $http, Auth, Upload) {
 
     $scope.checklistTitle = 'CHECKLIST CIERRE GERENTE';
     $scope.checklistOut = [
