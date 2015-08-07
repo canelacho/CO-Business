@@ -1,7 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-<div class="">
+<div class="supTabla">
   Listar segun -
   Mes:
     <select ng-model="month" ng-options="month.id as month.name for month in months"></select>
@@ -11,7 +11,7 @@
 </div>
 <div class="">
   <table class="table table-striped" id="mitabla">
-  <tr>
+  <tr style="font-size:18px">
     <td class="text-center"><strong>Fecha</strong></td>
     <td class="text-center"><strong>Responsable</strong></td>
     <td class="text-center"><strong>Novedades</strong></td>
@@ -27,27 +27,27 @@
     <div class="modal fade" id="myModal{{registro[$index]}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-body" style="color:grey" ng-show="incidencia">
-            Fecha: <strong style="color:red"> {{ fechaCheck }} </strong><br>
-            Autor: <strong style="color:red"> {{ autorCheck }} </strong><br>
+          <div class="modal-body incidentsOk" style="color:grey" ng-show="incidencia">
+            <div class="">Autor: <strong> {{ autorCheck }} </strong></div>
+            <div class="">Fecha: <strong> {{ fechaCheck }} </strong></div>
             <hr>
-            <h1>Incidencias registradas</h1>
-            Limpieza papeleras: <br>
-            <strong style="font-size:16px">{{ muestraValor }}</strong><br>
+            <h1><span style="color:black" >Incidencias registradas</span></h1>
+            <span style="color:#cccccc" >Limpieza papeleras: </span><br>
+            <strong style="font-size:16px; color:#898989">{{ muestraValor }}</strong><br><br>
             <div><img class="img-responsive" ng-src="../assets/images/garbage.jpg"></div><br><br>
             Verificacion TVs: <br>
             <strong style="font-size:16px">{{ muestraValor }}</strong><br>
             <div><img class="img-responsive" ng-src="../assets/images/fuzzy-TV.jpg"></div><br><br>
             Revision de Puerta: <br>
-            <strong style="font-size:16px">{{ muestraValor }}</strong><br>
+            <strong style="font-size:16px">{{ muestraValor }}</strong><br><br>
             <div><img class="img-responsive" ng-src="../assets/images/damage-door.jpg"></div><br><br>
           </div>
           // no incidents
-          <div class="modal-body" style="color:grey;" ng-show="!incidencia" id="incidencia">
-            Fecha: <strong style="color:red"> {{ fechaCheck }} </strong><br>
-            Autor: <strong style="color:red"> {{ autorCheck }} </strong><br>
+          <div class="modal-body noIncidents" style="color:grey;" ng-show="!incidencia" id="incidencia">
+            Fecha: <strong> {{ fechaCheck }} </strong><br>
+            Autor: <strong> {{ autorCheck }} </strong><br>
             <hr>
-            <h1>Evento sin incidencias</h1>
+            <h1><span>Evento sin incidencias</span></h1>
             <img class="img-responsive" width="200px" ng-src="../assets/images/Approved.png" alt="approve-coBusiness">
           </div>
         </div>

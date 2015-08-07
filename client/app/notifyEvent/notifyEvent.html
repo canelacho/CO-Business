@@ -15,9 +15,10 @@
       <label for="comment">Comentario:</label><br>
     	<textarea class="form-control" placeholder="Detalla tu comentario aquí" id="comment" name="comment" cols="40"></textarea>
     </div>
-    <div class="form-group">
-      <label for="imgFile">Adjuntar Imagen</label>
-      <input type="file" id="exampleInputFile">
+    <div class="btn-group">
+      <div class="btn btn-info" name="img" ngf-select="true" ng-model="file" accept="image/*">
+        <span class="glyphicon glyphicon-camera"></span>
+      </div>
     </div>
 
     <button class="btn btn-primary" type="summit" ng-click="sendNotify(formNotify)">Enviar</button>

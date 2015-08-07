@@ -2,6 +2,15 @@
   color:black;
 }
 
+.supTabla {
+  border-radius: 5px;
+  background-color: #EDEDED;
+  color: black;
+  padding-top: 15px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
 #mitabla tr:nth-child(odd){
 /*para los colores de las filas impares*/
 background-color: #ffffff;
@@ -13,4 +22,28 @@ background:#EDEDED;
 
 #incidencia img{
   margin-left:30%;
+}
+
+.incidentsOk {
+  color:black;
+}
+
+.incidentsOk strong {
+  color:red;
+  font-size:18px
+}
+
+.incidentsOk h1 {
+  color:black;
+  text-align:center;
+}
+
+.noIncidents strong {
+  color:green;
+  font-size:18px
+}
+
+.noIncidents h1 {
+  color:black;
+  text-align:center;
 }
