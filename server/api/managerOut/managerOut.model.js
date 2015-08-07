@@ -4,9 +4,10 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var ManagerOutSchema = new Schema({
-  	author: 'String',
+  	author: String,
+    inci: Boolean,
   	list: [
-  		{check: 'Boolean', comment: 'String', img: 'String'}
+  		{title: String, comment: String, imgUrl: String }
   	],
   	date: { type: Date, default: Date.now },
 });

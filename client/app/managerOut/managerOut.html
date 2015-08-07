@@ -6,21 +6,28 @@
 
    <!--  -->
 
-  <div class="btn-group" data-toggle="buttons">
-     <label class="btn btn-primary">
-       <input type="checkbox" autocomplete="off"> Checkbox 2
-     </label>
-   </div>
-
   <form class="form" name="form" novalidate>
-   <ul ng-form="taskForm" ng-repeat="task in checklistOut" ng-init="check=true">
+   <ul ng-form="taskForm" ng-repeat="task in checklistOut">
      <li>
-       <button ng-show="check" class="btn btn-danger" ng-click="check=!check" ><span class="glyphicon glyphicon-remove-circle"></span></button>
-       <button ng-hide="check" class="btn btn-success" ng-click="check=!check" name="check"><span class="glyphicon glyphicon-ok"></span></button>
+
+       <div class="btn-group" data-toggle="buttons">
+          <div class="btn btn-danger" ng-click="check=!check">
+            <input id="checks" type="checkbox" name="task{{task.step}}">
+            <span ng-hide="check" class="glyphicon glyphicon-remove-circle"></span>
+            <span ng-show="check" class="glyphicon glyphicon-ok"></span>
+          </div>
+        </div>
 
        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{task.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
 
-       <button class="btn btn-info" name="image"><span class="glyphicon glyphicon-camera"></span></button>
+       <!-- <button class="btn btn-info" name="image"><span class="glyphicon glyphicon-camera"></span></button> -->
+
+       <div class="btn-group">
+         <div class="btn btn-info" name="img{{task.step}}" ngf-select="true" ng-model="file" accept="image/*">
+           <!-- <input type="text" name="img{{task.step}}" ng-model="file"> -->
+           <span class="glyphicon glyphicon-camera"></span>
+         </div>
+       </div>
 
        <button class="btn btn-warning" data-toggle="modal" data-target="#info{{task.step}}"><span class="glyphicon glyphicon-info-sign"><span></button>
 
@@ -36,6 +43,9 @@
            </div>
          </div>
        </div>
+
+        <!-- image preview -->
+       <img ngf-src="file" name="img{{task.step}}" id="img">
 
        <div class="collapse" id="collapse{{task.step}}" style="margin-top:5px;">
          <div class="well" style="background-color:#428bca; border:0px; padding:10px">

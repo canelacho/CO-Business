@@ -15,6 +15,10 @@ body {
   border-color: #ccc;
 }
 
+h1 {
+  float:none;
+}
+
 #error {
   color: #ccc;
 }

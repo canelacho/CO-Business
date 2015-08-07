@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var ManagerOut = require('./managerOut.model');
+var fs = require('fs');
 
 // Get list of managerOuts
 exports.index = function(req, res) {

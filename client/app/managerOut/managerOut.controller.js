@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('ManagerOutCtrl', function ($scope, $http, Auth) {
+  .controller('ManagerOutCtrl', function ($scope, $http, Auth, Upload) {
 
     $scope.checklistTitle = 'CHECKLIST CIERRE GERENTE';
     $scope.checklistOut = [
@@ -81,10 +81,18 @@ angular.module('coAppApp')
         $scope.errors = {};
         $scope.getCurrentUser = Auth.getCurrentUser().name;
 
-        var check;
-        check = document.getElementsByName('check');
-        var comment = document.getElementsByName('comment');
-        var img = document.getElementsByName('img');
+        // var check;
+        // check = document.getElementsByName('check');
+        // var comment = document.getElementsByName('comment');
+        // var img = document.getElementsByName('img');
+
+        // $scope.$watch('file', function (file) {
+        //   if (file === '') {
+        //     return;
+        //     console.log('no file selected');
+        //   }
+        //   console.log('files: ' + file);
+        // });
 
 
         $scope.newClose = function(form) {
@@ -94,26 +102,56 @@ angular.module('coAppApp')
           //   console.log(comment);
           // };
 
-          var commentArray = $("input[id='comment']").serializeArray();
+          // IF not all tasks are perform alert!
+          var checks = $("input[id='checks']").serializeArray();
+          console.log(checks.length);
+          if (checks.length < 24) {
+            alert("Te faltan " + (24 - checks.length) + " tareas por realizar!");
+          } else {
+            console.log('Todas las tareas realizadas');
+
+          };
+
+          var commentArray = [];
+          var comments = $("input[id='comment']").serializeArray();
+          // console.log(comments);
+          angular.forEach(comments, function(i, value) {
+            this.push(i.value)
+          }, commentArray);
           console.log(commentArray);
 
-          $(commentArray).each(function() {
-            console.log(this.name + " " + this.value);
-          });
+          var imgArray = [];
+          // var imgObj;
+          var imgs = $("img[id='img']");
+          angular.forEach(imgs, function(i, src) {
+            this.push(i.src);
+          }, imgArray);
+          console.log(imgArray);
 
-          // angular.forEach(check, )
+          var imgToDB = fs.readFile(imgArray[0]);
+          console.log(imgToDB);
 
-          if (Auth.isLoggedIn) {
-            console.log('Logged in as ' + $scope.getCurrentUser);
+          // jQuery.each(imgs, function(i, img) {
+          //   // console.log(img.name, img.src);
+          //   imgArray.push(img.src);
+          //   // imgObj.push({"name":img.name, "url":img.src});
+          // });
+          // console.log(imgArray);
+          // imgObj = angular.toJson(imgArray);
+          // console.log(imgObj);
+          // console.log(imgs);
+
+
+          // if (Auth.isLoggedIn) {
+          //   console.log('Logged in as ' + $scope.getCurrentUser);
 
             // var temp;
             // angular.forEach($scope.newClose, function (task, index) {
             //   temp = angular.toJson($scope.newClose.taskForm_[0]);
             //   console.log(temp);
             // });
+          // }
 
-
-          }
         };
 
         // New Thing from Main example
