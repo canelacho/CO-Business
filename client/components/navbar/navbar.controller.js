@@ -14,6 +14,14 @@ angular.module('coAppApp')
       {
         'title': 'Manager Out',
         'link': '/managerOut'
+      },
+      {
+        'title': 'Manager Out Report',
+        'link': '/managerOutReport'
+      },
+      {
+        'title': 'Notify',
+        'link': '/notifyEvent'
       }
 
     // submenu: [

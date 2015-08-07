@@ -1,0 +1,12 @@
+.table {
+  color:black;
+}
+
+#mitabla tr:nth-child(odd){
+/*para los colores de las filas impares*/
+background-color: #ffffff;
+}
+#mitabla tr:nth-child(even){
+/*para los colores de las filas pares*/
+background:#EDEDED;
+}

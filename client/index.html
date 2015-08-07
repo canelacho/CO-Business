@@ -17,19 +17,30 @@
       <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
       <!-- endbower -->
     <!-- endbuild -->
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
       <link rel="stylesheet" href="app/account/login/login.css">
       <link rel="stylesheet" href="app/admin/admin.css">
       <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/inBox/inBox.css">
       <link rel="stylesheet" href="app/main/main.css">
       <link rel="stylesheet" href="app/managerIn/managerIn.css">
+      <link rel="stylesheet" href="app/managerInReport/managerInReport.css">
       <link rel="stylesheet" href="app/managerOut/managerOut.css">
+      <link rel="stylesheet" href="app/managerOutReport/managerOutReport.css">
+      <link rel="stylesheet" href="app/notifyEvent/notifyEvent.css">
+      <link rel="stylesheet" href="app/reportList/reportList.css">
       <link rel="stylesheet" href="components/modal/modal.css">
       <link rel="stylesheet" href="components/navbar/nav.css">
       <!-- endinjector -->
     <!-- endbuild -->
+
   </head>
   <body ng-app="coAppApp">
     <!--[if lt IE 7]>
@@ -65,9 +76,9 @@
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-      <script src="bower_components/flow.js/dist/flow.js"></script>
-      <script src="bower_components/ng-flow/dist/ng-flow.js"></script>
       <!-- endbower -->
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
       <script src="socket.io-client/socket.io.js"></script>
@@ -86,8 +97,16 @@
           <script src="app/main/main.js"></script>
           <script src="app/managerIn/managerIn.controller.js"></script>
           <script src="app/managerIn/managerIn.js"></script>
+          <script src="app/managerInReport/managerInReport.controller.js"></script>
+          <script src="app/managerInReport/managerInReport.js"></script>
           <script src="app/managerOut/managerOut.controller.js"></script>
           <script src="app/managerOut/managerOut.js"></script>
+          <script src="app/managerOutReport/managerOutReport.controller.js"></script>
+          <script src="app/managerOutReport/managerOutReport.js"></script>
+          <script src="app/notifyEvent/notifyEvent.controller.js"></script>
+          <script src="app/notifyEvent/notifyEvent.js"></script>
+          <script src="app/reportList/reportList.controller.js"></script>
+          <script src="app/reportList/reportList.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/modal/modal.service.js"></script>
