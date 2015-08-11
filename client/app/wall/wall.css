@@ -2,10 +2,15 @@
   text-align: center;
 }
 
+.wall img {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
 .wall h1 {
-  color: red;
+  color: rgb(230,174,24);
 }
 
 .wall h3 {
-  color: pink;
+  color: rgb(227,5,19);
 }
