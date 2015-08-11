@@ -7,27 +7,36 @@ angular.module('coAppApp')
 
     $scope.users = [
     {
-      id:"1",
+      id:"0",
       name:"Alejandro",
       rol:"master"
     },
     {
-      id:"2",
+      id:"1",
       name:"Daniel",
       rol:"admin"
     },
     {
-      id:"3",
+      id:"2",
       name:"Maribel",
       rol:"gerente"
     },
     {
       id:"3",
-      name:"Maribel",
+      name:"Emmanuel",
       rol:"crew"
     }]
 
 
+    var usersMailList = [];
 
+    $scope.addUserMail = function(user){
+      console.log($scope.users[user].name);
+      usersMailList.push($scope.users[user].name);
+      console.log(usersMailList);
+
+      $scope.fullMailList =  usersMailList;
+
+    };
 
   });

@@ -5,3 +5,8 @@ form#notify {
   border-radius: 10px;
   color:gray;
 }
+
+.btnAdd {
+  margin-top:5px;
+  margin-bottom: 5px;
+}
