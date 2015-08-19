@@ -5,11 +5,11 @@ var mongoose = require('mongoose'),
 
 var ManagerOutSchema = new Schema({
   	author: String,
+    date: { type: Date, default: Date.now },
     inci: Boolean,
   	list: [
-  		{title: String, comment: String, imgUrl: String }
-  	],
-  	date: { type: Date, default: Date.now },
+  		{comment: String, imgUrl: Object, title: String}
+  	]
 });
 
 module.exports = mongoose.model('ManagerOut', ManagerOutSchema);

@@ -18,9 +18,10 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  // require('../api/user/upload/user/upload.socket').register(socket);
   require('../api/managerOut/managerOut.socket').register(socket);
   require('../api/managerIn/managerIn.socket').register(socket);
-  require('../api/thing/thing.socket').register(socket);
+  // require('../api/thing/thing.socket').register(socket);
 }
 
 module.exports = function (socketio) {

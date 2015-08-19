@@ -5,3 +5,23 @@ ul {
 div.btn.btn-danger.active {
   background: green;
 }
+
+div.modal-body {
+  color: grey;
+}
+
+img.img-prev {
+  width: 200px;
+}
+
+div[id^="collapse"] {
+  margin-top: 5px;
+}
+
+div.well-comment {
+  background-color:#428bca; border:0px; padding:10px
+}
+
+li.next-task {
+  margin-top: 8px;
+}
