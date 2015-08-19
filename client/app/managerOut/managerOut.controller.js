@@ -94,7 +94,6 @@ angular.module('coAppApp')
         //   console.log('files: ' + file);
         // });
 
-
         $scope.newClose = function(form) {
           // $scope.submitted = true;
           // console.log(comment);
