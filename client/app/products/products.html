@@ -2,4 +2,95 @@
 
 <div class="container">
 
+  <form class="form-horizontal">
+    <label class="col-sm-12" style="font-size:22px; color:yellow"> Nuevo Producto</span><br></label>
+    <div class="form-group">
+      <label for="descripcion" class="col-sm-3 control-label">Codigo</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="descripcion" placeholder="codigo asignado al producto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="descripcion" class="col-sm-3 control-label">Descripcion</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="descripcion" placeholder="Nombre o descripcion del producto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="tipo" class="col-sm-3 control-label">Tipo</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="tipo" placeholder="Producto Termindo / Materia Prima">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="presentacionMayor" class="col-sm-3 control-label">Presentacion de Mayor</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="presentacionMayor" placeholder="Caja, Saco, Bulto, Paquete">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="conversion" class="col-sm-3 control-label">Conversion PM - UM</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="conversion" placeholder="De Present. Mayor a Unidad Manejo. ">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="unidadManejo" class="col-sm-3 control-label">Unidad de Manejo</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="unidadManejo" placeholder="Unidad, Kg, Lb, Lt, Gal, Mt... ">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Minimo" class="col-sm-3 control-label">Cantidad Minima</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="Minimo" placeholder="Cantidad Minima en almacen">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="maximo" class="col-sm-3 control-label">Cantidad Maxima</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="maximo" placeholder="Cantidad Maxima en almacen">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="costoPromedio" class="col-sm-3 control-label">Costo Promedio</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="costoPromedio" placeholder="Costo Promedio producto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" ng-click="sendNotify(formNotify)">Guardar</button>
+      </div>
+    </div>
+  </form>
 </div>
