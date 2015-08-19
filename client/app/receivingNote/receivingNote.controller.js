@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('InBoxCtrl', function ($scope) {
+  .controller('ReceivingNoteCtrl', function ($scope) {
     $scope.message = 'Hello';
   });

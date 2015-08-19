@@ -1,0 +1,16 @@
+.modal-body {
+  color:grey;
+}
+
+/* todos los div que tengan id xxxx se les aplica esta regla. */
+div[id^="collapse_"] {
+  margin-top:5px;
+}
+
+.btnGuardar{
+  margin-left:40px;
+}
+
+.separateList {
+  margin-bottom: 8px; 
+}

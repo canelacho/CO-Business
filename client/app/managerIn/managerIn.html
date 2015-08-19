@@ -5,51 +5,857 @@
 
 <h2>{{ checklistTitle }}</h2>
 
-<div class="btn-group" data-toggle="buttons">
-   <label class="btn btn-primary">
-     <input type="checkbox" autocomplete="off" name="btnchk"> Checkbox 2
-   </label>
- </div>
 
-
-<form name='managerInForm' novalidate>
-  <div class="col-md-12"  style="padding-top:5px;" data-ng-repeat="text in checklistIn track by $index" data-ng-init="btnVisibility = true">
-      <button class="btn btn-danger" data-ng-click="btnVisibility = !btnVisibility" data-ng-show="btnVisibility"><span class="glyphicon glyphicon-remove-circle"></span></button>
-      <button class="btn btn-success" data-ng-click="btnVisibility = !btnVisibility" data-ng-hide="btnVisibility" title="done_{{$index}}" required><span class="glyphicon glyphicon-ok"></span></button>
-
-      <button class="btn btn-primary btn-file" type="button" data-toggle="collapse" data-target="#collapse{{text.step}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
-
-      <!-- photo button action -->
-      <button class="btn btn-info"><span class="glyphicon glyphicon-camera"></span></button>
-
-
-      <button class="btn btn-warning" data-toggle="modal" data-target="#myModal{{text.step}}"><span class="glyphicon glyphicon-info-sign"><span></button>
-      <label> - {{text.action}} </label>
-
-      <div class="modal fade" id="myModal{{text.step}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <form class="form" name="form" novalidate>
+  <ul ng-form="taskForm">
+    <!-- ************************************************ TASK_0 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 1, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_0" type="checkbox" name="check_0">
+         <span ng-hide="check_0" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_0" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 2, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_0" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 3, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_0" ngf-select="true" ng-model="file_0" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 4, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[0].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body" style="color:grey;">
-              <strong> {{text.action}} :</strong><br>
-              {{ text.info }}
-            </div>
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[0].action }}</strong><br>
+                <p>{{ checklistIn[0].info }}</p>
+              </div>
           </div>
         </div>
       </div>
-
-      <div class="collapse" id="collapse{{text.step}}" style="margin-top:5px;">
-        <div class="well" style="background-color:#428bca; border:0px; padding:10px">
-          <input type="text" class="form-control" name="commit_{{$index}}" value="">
+      <!-- image preview -->
+      <img ngf-src="file" name="img_0" id="img_0" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_0" >
+        <div>
+          <input type="text" id="comment_0" name="comment_0" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[0].action }} aqui">
         </div>
       </div>
+    </li>
+    <!-- ************************************************ TASK_1 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 1, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_1" type="checkbox" name="check_1">
+         <span ng-hide="check_1" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_1" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 2, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_1" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 3, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_1" ngf-select="true" ng-model="file_1" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 4, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_1"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[1].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[1].action }}</strong><br>
+                <p>{{ checklistIn[1].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_1" id="img_1" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_1" >
+        <div>
+          <input type="text" id="comment_1" name="comment_1" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[1].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_2 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 2, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_2" type="checkbox" name="check_2">
+         <span ng-hide="check_2" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_2" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 2, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 3, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_2" ngf-select="true" ng-model="file_2" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 4, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_2"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[2].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_2" tabindex="-2" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[2].action }}</strong><br>
+                <p>{{ checklistIn[2].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_2" id="img_2" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_2" >
+        <div>
+          <input type="text" id="comment_2" name="comment_2" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[2].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_3 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 3, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_3" type="checkbox" name="check_3">
+         <span ng-hide="check_3" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_3" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 3, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_3" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 3, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_3" ngf-select="true" ng-model="file_3" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 4, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_3"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[3].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_3" tabindex="-3" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[3].action }}</strong><br>
+                <p>{{ checklistIn[3].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_3" id="img_3" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_3" >
+        <div>
+          <input type="text" id="comment_3" name="comment_3" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[3].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_4 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 4, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_4" type="checkbox" name="check_4">
+         <span ng-hide="check_4" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_4" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 4, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_4" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 4, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_4" ngf-select="true" ng-model="file_4" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 4, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_4"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[4].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_4" tabindex="-4" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[4].action }}</strong><br>
+                <p>{{ checklistIn[4].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_4" id="img_4" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_4" >
+        <div>
+          <input type="text" id="comment_4" name="comment_4" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[4].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_5 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 5, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_5" type="checkbox" name="check_5">
+         <span ng-hide="check_5" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_5" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 5, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 5, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_5" ngf-select="true" ng-model="file_5" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 5, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_5"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[5].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_5" tabindex="-5" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[5].action }}</strong><br>
+                <p>{{ checklistIn[5].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_5" id="img_5" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_5" >
+        <div>
+          <input type="text" id="comment_5" name="comment_5" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[5].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_6 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 6, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_6" type="checkbox" name="check_6">
+         <span ng-hide="check_6" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_6" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 6, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_6" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 6, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_6" ngf-select="true" ng-model="file_6" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 6, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_6"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[6].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_6" tabindex="-6" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[6].action }}</strong><br>
+                <p>{{ checklistIn[6].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_6" id="img_6" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_6" >
+        <div>
+          <input type="text" id="comment_6" name="comment_6" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[6].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_7 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 7, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_7" type="checkbox" name="check_7">
+         <span ng-hide="check_7" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_7" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 7, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_7" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 7, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_7" ngf-select="true" ng-model="file_7" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 7, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_7"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[7].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_7" tabindex="-7" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[7].action }}</strong><br>
+                <p>{{ checklistIn[7].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_7" id="img_7" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_7" >
+        <div>
+          <input type="text" id="comment_7" name="comment_7" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[7].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_8 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 8, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_8" type="checkbox" name="check_8">
+         <span ng-hide="check_8" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_8" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 8, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_8" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 8, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_8" ngf-select="true" ng-model="file_8" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 8, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_8"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[8].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_8" tabindex="-8" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[8].action }}</strong><br>
+                <p>{{ checklistIn[8].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_8" id="img_8" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_8" >
+        <div>
+          <input type="text" id="comment_8" name="comment_8" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[8].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_9 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 9, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_9" type="checkbox" name="check_9">
+         <span ng-hide="check_9" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_9" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 9, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_9" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 9, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_9" ngf-select="true" ng-model="file_9" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 9, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_9"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[9].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_9" tabindex="-9" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[9].action }}</strong><br>
+                <p>{{ checklistIn[9].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_9" id="img_9" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_9" >
+        <div>
+          <input type="text" id="comment_9" name="comment_9" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[9].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_10 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 10, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_10" type="checkbox" name="check_10">
+         <span ng-hide="check_10" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_10" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 10, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_10" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 10, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_10" ngf-select="true" ng-model="file_10" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 10, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_10"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[10].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_10" tabindex="-10" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[10].action }}</strong><br>
+                <p>{{ checklistIn[10].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_10" id="img_10" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_10" >
+        <div>
+          <input type="text" id="comment_10" name="comment_10" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[10].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_11 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 11, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_11" type="checkbox" name="check_11">
+         <span ng-hide="check_11" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_11" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 11, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_11" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 11, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_11" ngf-select="true" ng-model="file_11" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 11, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_11"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[11].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_11" tabindex="-11" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[11].action }}</strong><br>
+                <p>{{ checklistIn[11].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_11" id="img_11" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_11" >
+        <div>
+          <input type="text" id="comment_11" name="comment_11" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[11].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_12 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 12, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_12" type="checkbox" name="check_12">
+         <span ng-hide="check_12" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_12" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 12, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_12" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 12, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_12" ngf-select="true" ng-model="file_12" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 12, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_12"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[12].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_12" tabindex="-12" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[12].action }}</strong><br>
+                <p>{{ checklistIn[12].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_12" id="img_12" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_12" >
+        <div>
+          <input type="text" id="comment_12" name="comment_12" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[12].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_13 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 13, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_13" type="checkbox" name="check_13">
+         <span ng-hide="check_13" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_13" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 13, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_13" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 13, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_13" ngf-select="true" ng-model="file_13" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 13, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_13"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[13].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_13" tabindex="-13" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[13].action }}</strong><br>
+                <p>{{ checklistIn[13].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_13" id="img_13" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_13" >
+        <div>
+          <input type="text" id="comment_13" name="comment_13" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[13].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_14 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 14, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_14" type="checkbox" name="check_14">
+         <span ng-hide="check_14" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_14" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 14, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_14" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 14, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_14" ngf-select="true" ng-model="file_14" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 14, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_14"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[14].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_14" tabindex="-14" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[14].action }}</strong><br>
+                <p>{{ checklistIn[14].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_14" id="img_14" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_14" >
+        <div>
+          <input type="text" id="comment_14" name="comment_14" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[14].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_15 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 15, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_15" type="checkbox" name="check_15">
+         <span ng-hide="check_15" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_15" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 15, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_15" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 15, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_15" ngf-select="true" ng-model="file_15" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 15, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_15"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[15].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_15" tabindex="-15" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[15].action }}</strong><br>
+                <p>{{ checklistIn[15].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_15" id="img_15" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_15" >
+        <div>
+          <input type="text" id="comment_15" name="comment_15" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[15].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_16 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 16, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_16" type="checkbox" name="check_16">
+         <span ng-hide="check_16" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_16" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 16, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_16" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 16, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_16" ngf-select="true" ng-model="file_16" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 16, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_16"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[16].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_16" tabindex="-16" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[16].action }}</strong><br>
+                <p>{{ checklistIn[16].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_16" id="img_16" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_16" >
+        <div>
+          <input type="text" id="comment_16" name="comment_16" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[16].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_17 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 17, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_17" type="checkbox" name="check_17">
+         <span ng-hide="check_17" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_17" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 17, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_17" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 17, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_17" ngf-select="true" ng-model="file_17" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 17, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_17"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[17].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_17" tabindex="-17" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[17].action }}</strong><br>
+                <p>{{ checklistIn[17].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_17" id="img_17" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_17" >
+        <div>
+          <input type="text" id="comment_17" name="comment_17" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[17].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_18 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 18, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_18" type="checkbox" name="check_18">
+         <span ng-hide="check_18" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_18" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 18, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_18" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 18, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_18" ngf-select="true" ng-model="file_18" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 18, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_18"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[18].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_18" tabindex="-18" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[18].action }}</strong><br>
+                <p>{{ checklistIn[18].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_18" id="img_18" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_18" >
+        <div>
+          <input type="text" id="comment_18" name="comment_18" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[18].action }} aqui">
+        </div>
+      </div>
+    </li>
+    <!-- ************************************************ TASK_19 ************************************************ -->
+    <li class="separateList">
+      <!-- Buttom 19, check -->
+      <div class="btn-group" data-toggle="buttons">
+       <div class="btn btn-danger" ng-click="check=!check">
+         <input id="checks_19" type="checkbox" name="check_19">
+         <span ng-hide="check_19" class="glyphicon glyphicon-remove-circle"></span>
+         <span ng-show="check_19" class="glyphicon glyphicon-ok"></span>
+       </div>
+      </div>
+      <!-- Buttom 19, comment -->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_19" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span></button>
+      <!-- Buttom 19, attach -->
+      <div class="btn-group">
+        <div class="btn btn-info" name="img_19" ngf-select="true" ng-model="file_19" accept="image/*">
+          <span class="glyphicon glyphicon-camera"></span>
+        </div>
+      </div>
+      <!-- Buttom 19, help info -->
+      <button class="btn btn-warning" data-toggle="modal" data-target="#info_19"><span class="glyphicon glyphicon-info-sign"><span></button>
+      <!-- Text about task -->
+      <label> - {{ checklistIn[19].action }}</label>
+      <!-- Modal float text help info -->
+      <div class="modal fade" id="info_19" tabindex="-19" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <strong>{{ checklistIn[19].action }}</strong><br>
+                <p>{{ checklistIn[19].info }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- image preview -->
+      <img ngf-src="file" name="img_19" id="img_19" width="250">
+      <!-- Comment in collapse -->
+      <div class="collapse" id="collapse_19" >
+        <div>
+          <input type="text" id="comment_19" name="comment_19" class="form-control" value="" placeholder="Escriba su observacion acerca de {{ checklistIn[19].action }} aqui">
+        </div>
+      </div>
+    </li>
 
-   </div>
+  </ul>
 
-    <buttom class='btn btn-success pull-left' data-ng-click='submit(managerInForm, $index)'>Test</button>
-</form>
+  <br>
+  <button class="btn btn-primary btnGuardar" type="summit" ng-click="newClose(form)">Guardar</button>
+ </form>
+
 </div>
-
-<input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
 
 
  </div>

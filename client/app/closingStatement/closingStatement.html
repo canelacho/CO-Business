@@ -1,0 +1,215 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<div class="container">
+
+
+  <form class="form-horizontal">
+
+    <div class="form-group">
+      <label>Nº: <span style="color:pink; font-size:22px">{{ idKey }}</span> - </label>
+      <label for="name">Responsable:</label>
+      <select class="" ng-model="user" ng-options="user.id as user.name for user in users"></select>
+      <label for="name">Fecha:</label>
+      <input type="text" id="fecha" placeholder="{{ fechaActual | date }}">
+    </div>
+
+    <label class="col-sm-12" style="font-size:22px; color:yellow"> Declaracion de Ventas : Total  <span>{{ totalDeclarado | currency }}</span><br></label>
+    <div class="form-group">
+      <label for="pagoEfectivo" class="col-sm-3 control-label">Efectivo</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="pagoEfectivo" placeholder="Ingrese el monto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pagoTDebito" class="col-sm-3 control-label">Tarjeta Debito</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="pagoTDebito" placeholder="Ingrese el monto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_1"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pagoTCredito" class="col-sm-3 control-label">Tarjeta Credito</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="pagoTCredito" placeholder="Ingrese el monto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_2"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pagoCheque" class="col-sm-3 control-label">Cheques</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="pagoCheque" placeholder="Ingrese el monto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_3"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pagoOtro" class="col-sm-3 control-label">Otro (s)</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="pagoOtro" placeholder="Ingrese el monto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_4"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+
+    <label class="col-sm-12" style="font-size:22px; color:yellow"> Ventas segun Sistema <br></label>
+
+    <div class="form-group">
+      <label for="ventaTicket" class="col-sm-3 control-label">Ventas en Ticket</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="ventaTicket" placeholder="Ingrese el monto" ng-value="ventasTicket">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_5"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ventaRetiros" class="col-sm-3 control-label">Retiros</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="ventaRetiros" placeholder="Ingrese el monto">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_6"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ventaDiferencia" class="col-sm-3 control-label">Diferencia</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="ventaDiferencia" placeholder="Calculo Automatico" ng-value="{{ calculoDiferencia }}" ng-disabled="true">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_7"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="observaciones" class="col-sm-3 control-label">Observaciones</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="observaciones" placeholder="Detalles, notas, observaciones en cierre">
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#info_8"><span class="glyphicon glyphicon-info-sign"><span></button>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" ng-click="sendNotify(formNotify)">Enviar</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+
+
+<!-- Modal float text help info -->
+<div class="modal fade" id="info_0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[0].action }}</strong><br>
+          <p>{{ closingStatement[0].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[1].action }}</strong><br>
+          <p>{{ closingStatement[1].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[2].action }}</strong><br>
+          <p>{{ closingStatement[2].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[3].action }}</strong><br>
+          <p>{{ closingStatement[3].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[4].action }}</strong><br>
+          <p>{{ closingStatement[4].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[5].action }}</strong><br>
+          <p>{{ closingStatement[5].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[6].action }}</strong><br>
+          <p>{{ closingStatement[6].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[7].action }}</strong><br>
+          <p>{{ closingStatement[7].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[8].action }}</strong><br>
+          <p>{{ closingStatement[8].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="info_9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <strong>{{ closingStatement[9].action }}</strong><br>
+          <p>{{ closingStatement[9].info }}</p>
+        </div>
+    </div>
+  </div>
+</div>
