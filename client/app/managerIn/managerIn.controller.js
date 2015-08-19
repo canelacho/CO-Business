@@ -30,6 +30,14 @@ angular.module('coAppApp')
     ];
 
 
+    var checks = $("input[id^='checks_']").serializeArray();
+    console.log(checks.length);
+    if (checks.length < 24) {
+      // alert("Te faltan " + (24 - checks.length) + " tareas por realizar!");
+    } else {
+      console.log('Todas las tareas marcasas como realizadas');
+    };
+
 
     var formController=$scope.managerInForm;
 

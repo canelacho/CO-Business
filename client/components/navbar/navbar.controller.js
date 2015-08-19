@@ -12,12 +12,32 @@ angular.module('coAppApp')
         'link': '/wall'
       },
       {
+        'title': 'Products',
+        'link': '/products'
+      },
+      {
+        'title': 'Providers',
+        'link': '/providers'
+      },
+      {
+        'title': 'Closing Statement',
+        'link': '/closingStatement'
+      },
+      {
+        'title': 'Receiving Note',
+        'link': '/receivingNote'
+      },
+      {
         'title': 'Manager In',
         'link': '/managerIn'
       },
       {
         'title': 'Manager Out',
         'link': '/managerOut'
+      },
+      {
+        'title': 'Report List',
+        'link': '/reportList'
       },
       {
         'title': 'Manager Out Report',
