@@ -15,7 +15,7 @@ angular.module('coAppApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/admin');
+          $location.path('/wall');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

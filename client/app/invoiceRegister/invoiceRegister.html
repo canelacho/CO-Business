@@ -1,3 +1,98 @@
-<div class="col-md-12">
-This is the invoiceRegister view.
-</div>
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<form>
+
+<div class="container">
+
+  <h3>Datos del Documento</h3>
+  <hr>
+
+  <div class="DatosForm">
+
+    <div class="col-lg-4">
+      <div class="form-group">
+        <label for="provDoc">Proveedor</label>
+         <div class="input-group">
+           <input type="text" class="form-control" id="provDoc" placeholder="Busqueda de ..">
+           <span class="input-group-btn">
+             <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+           </span>
+         </div><!-- /input-group -->
+      </div> <!-- /form-group -->
+    </div><!-- /.col-lg-6 -->
+
+    <div class="col-lg-4">
+       <div class="form-group">
+          <label for="numDoc">Numero de Documento</label>
+          <input type="text" class="form-control" id="numDoc" placeholder="Nº">
+       </div>
+    </div>
+
+    <div class="col-lg-4">
+       <div class="form-group">
+          <label for="fechaDoc">Fecha de Documento</label>
+          <input type="date" class="form-control" id="fechaDoc" placeholder="Fecha">
+       </div>
+    </div>
+
+    <div class="col-lg-4">
+       <div class="form-group">
+          <label for="fechaVenceDoc">Fecha Vencimiento de Documento</label>
+          <input type="date" class="form-control" id="fechaVenceDoc" placeholder="Fecha">
+       </div>
+    </div>
+
+    <div class="col-lg-4">
+       <div class="form-group">
+          <label for="montoDoc">Monto</label>
+          <input type="number" class="form-control" id="montoDoc" placeholder="0000.00">
+       </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group">
+        <label for="condPago">Condicion de Pago</label>
+        <select class="form-control" id="condPago">
+          <option>Credito</option>
+          <option>Contado</option>
+        </select>
+      </div>
+    </div>
+
+  </div> <!-- /DatosForm -->
+
+  <h3>Datos de Pago</h3>
+  <hr>
+
+  <div class="DatosForm">
+
+  <div class="col-lg-4">
+     <div class="form-group">
+        <label for="status">Status</label>
+        <input type="text" class="form-control" id="status" placeholder="Pendiente / Pagada / Anulada" disabled="true">
+     </div>
+  </div>
+
+  <div class="col-lg-4">
+     <div class="form-group">
+        <label for="montoPag">Monto Pagado</label>
+        <input type="number" class="form-control" id="montoPag" placeholder="0000.00" disabled="true">
+     </div>
+  </div>
+
+  <div class="col-lg-4">
+     <div class="form-group">
+        <label for="montoPen">Monto Pendiente</label>
+        <input type="number" class="form-control" id="montoPen" placeholder="0000.00" disabled="true">
+     </div>
+  </div>
+
+
+  <div class="col-lg-4">
+    <button class="form-control btn btn-primary regDoc" type="submit">Registrar Documento</button>
+  </div>
+
+  </div> <!-- /DatosForm -->
+
+</form>
+</div> <!-- /container -->

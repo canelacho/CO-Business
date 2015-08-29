@@ -8,23 +8,27 @@ angular.module('coAppApp')
       //   'link': '/'
       // },
       {
-        'title': 'Main',
+        'title': 'Inicio',
         'link': '/wall'
       },
       {
-        'title': 'Products',
+        'title': 'Productos',
         'link': '/products'
       },
       {
-        'title': 'Providers',
+        'title': 'Proveedores',
         'link': '/providers'
       },
       {
-        'title': 'Closing Statement',
+        'title': 'Registrar Facturas',
+        'link': '/invoiceRegister'
+      },
+      {
+        'title': 'Cierre de Sesion',
         'link': '/closingStatement'
       },
       {
-        'title': 'Receiving Note',
+        'title': 'Nota Recepcion',
         'link': '/receivingNote'
       },
       {
@@ -36,15 +40,19 @@ angular.module('coAppApp')
         'link': '/managerOut'
       },
       {
-        'title': 'Report List',
+        'title': 'Reportes',
         'link': '/reportList'
       },
       {
-        'title': 'Manager Out Report',
+        'title': 'Listado Manager Out',
         'link': '/managerOutReport'
       },
       {
-        'title': 'Notify',
+        'title': 'Balance',
+        'link': '/balance'
+      },
+      {
+        'title': 'Notificaciones',
         'link': '/notifyEvent'
       }
 
