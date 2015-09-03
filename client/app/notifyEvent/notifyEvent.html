@@ -4,10 +4,10 @@
 
   <form id="notify">
     <div class="form-group">
-      <label for="name">Para:</label>
+      <label for="name">Seleccione quienes recibiran la notificación:</label>
       <select class="form-control" ng-model="user" ng-options="user.id as user.name for user in users"></select>
       <button class="btn btn-info btnAdd" ng-click="addUserMail(user)">Agregar Destinatario</button>
-      <input class="form-control" type="text" name="fullMailList" placeholder="{{ fullMailList }}" />
+      <input class="form-control" type="text" name="fullMailList" placeholder="Para: {{ fullMailList }}" disabled="true"/>
     </div>
     <div class="form-group">
       <label for="tema">Tema:</label>
@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
       <label for="comment">Comentario:</label><br>
-    	<textarea class="form-control" placeholder="Detalla tu comentario aquí" id="comment" name="comment" cols="40"></textarea>
+    	<textarea class="form-control" placeholder="Describe tu notificación" id="comment" name="comment" cols="40"></textarea>
     </div>
     <div class="btn-group">
       <div class="btn btn-info" name="img" ngf-select="true" ng-model="file" accept="image/*">

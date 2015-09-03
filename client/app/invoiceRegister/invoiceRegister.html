@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<form>
+<form novalidate="true">
 
 <div class="container">
 
@@ -29,6 +29,26 @@
     </div>
 
     <div class="col-lg-4">
+      <div class="form-group">
+        <label for="tipoDoc">Tipo Documento</label>
+        <select class="form-control" id="tipoDoc">
+          <option>Factura</option>
+          <option>Gasto</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group">
+        <label for="tipoGasto">Tipo Gasto</label>
+        <select class="form-control" id="tipoGasto">
+          <option>Plan 1</option>
+          <option>Plan 2</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
        <div class="form-group">
           <label for="fechaDoc">Fecha de Documento</label>
           <input type="date" class="form-control" id="fechaDoc" placeholder="Fecha">
@@ -44,8 +64,22 @@
 
     <div class="col-lg-4">
        <div class="form-group">
-          <label for="montoDoc">Monto</label>
-          <input type="number" class="form-control" id="montoDoc" placeholder="0000.00">
+          <label for="montoBaseDoc">Monto Base</label>
+          <input type="number" class="form-control" id="montoBaseDoc" placeholder="0000.00">
+       </div>
+    </div>
+
+    <div class="col-lg-4">
+       <div class="form-group">
+          <label for="montoImpDoc">Monto Impuesto</label>
+          <input type="number" class="form-control" id="montoImpDoc" placeholder="0000.00">
+       </div>
+    </div>
+
+    <div class="col-lg-4">
+       <div class="form-group">
+          <label for="montoTotal">Monto Total</label>
+          <input type="number" class="form-control" id="montoTotal" placeholder="0000.00" disabled="true">
        </div>
     </div>
 
@@ -59,9 +93,16 @@
       </div>
     </div>
 
+    <div class="col-lg-4">
+       <div class="form-group">
+          <label for="obsDoc">Observaciones</label>
+          <textarea class="form-control" rows="2" id="obsDoc"  placeholder="Registre detalle u observaciones"></textarea>
+       </div>
+    </div>
+
   </div> <!-- /DatosForm -->
 
-  <h3>Datos de Pago</h3>
+  <h3>Status de Saldo</h3>
   <hr>
 
   <div class="DatosForm">

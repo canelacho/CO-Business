@@ -1,0 +1,15 @@
+.textoCentrado {
+  text-align:center;
+}
+
+.textoDerecha {
+  text-align: right;
+}
+
+input[type="number"] {
+  text-align:right;
+}
+
+input[type="text"] {
+  text-align:center;  
+}

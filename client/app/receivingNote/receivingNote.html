@@ -2,69 +2,121 @@
 
 <div class="container">
 
-  <form class="form-horizontal">
-  <label class="col-sm-12" style="font-size:22px; color:yellow"> Nota de Recepcion</span><br></label>
+  <form class="form-horizontal" novalidate="true">
+
+  <h3>Registrar Nota de Recepcion</h3>
+  <hr>
+
+  <table class="">
+    <thead style="color:white">
+      <tr>
+        <th width="60%" ><strong>Proveedor</strong></th>
+        <th width="20%" ><strong>Numero Doc</strong></th>
+        <th class="textoCentrado" width="20%"><strong>Img Doc</strong></th>
+      </tr>
+    </thead>
+
+    <tr style="font-size:18px">
+      <td>
+        <div class="col-lg-10">
+          <div class="form-group">
+             <div class="input-group">
+               <input type="text" class="form-control" id="provDoc" placeholder="Busqueda de ..">
+               <span class="input-group-btn">
+                 <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+               </span>
+             </div><!-- /input-group -->
+          </div> <!-- /form-group -->
+        </div><!-- /.col-lg-6 -->
+      </td>
+      <td>
+        <div class="col-lg-10">
+           <div class="form-group">
+              <input type="text" class="form-control" id="numDoc" placeholder="Nº">
+           </div>
+        </div>
+      </td>
+      <td  class="textoCentrado">
+        <div class="btn-group">
+          <div class="btn btn-info" name="img" ngf-select="true" ng-model="file" accept="image/*">
+            <span class="glyphicon glyphicon-camera"></span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3"><textarea class="form-control" rows="2" placeholder="Observaciones ..." style="margin-bottom: 30px"
+      ></textarea></td>
+    </tr>
+
+
+  </table>
+
+
 
   <table class="table table-responsive">
     <thead style="color:white">
       <tr>
-        <th width="20%" align="center"><strong>Descripcion</strong><th>
-        <th width="2%" align="center"><strong>Cant Recibida al Mayor</strong><th>
-        <th width="2%" align="center"><strong>Presentacion Mayor</strong><th>
-        <th width="2%" align="center"><strong>Conversion PM - UM</strong><th>
-        <th width="2%" align="center"><strong>Cant Recibida Uni. Manejo</strong><th>
-        <th width="2%" align="center"><strong>Total Recibido</strong><th>
+        <th width="40%"  class="textoCentrado" ><strong>Descripcion</strong></th>
+        <th width="12%"  class="textoCentrado" ><strong>Cant Recibida al Mayor</strong></th>
+        <th width="12%"  class="textoCentrado" ><strong>Presentacion Mayor</strong></th>
+        <th width="12%"  class="textoCentrado" ><strong>Conversion PM - UM</strong></th>
+        <th width="12%"  class="textoCentrado" ><strong>Cant Recibida Uni. Manejo</strong></th>
+        <th width="12%"  class="textoCentrado" ><strong>Total Recibido</strong></th>
       </tr>
     </thead>
 
-    <tbody>
+    <tbody style="color:yellow">
       <tr style="font-size:18px">
-        <td>Pan<td>
-        <td><input type="text" class="form-control" id="cantRecPM" placeholder="Cant"><td>
-        <td align="center">CAJA<td>
-        <td><input type="text" class="form-control" id="convPM_UM" placeholder="Conversion"><td>
-        <td><input type="text" class="form-control" id="cantRecUM" placeholder="Cant"><td>
-        <td align="right">1250<td>
+        <td>Pan</td>
+        <td><input type="number" class="form-control" id="cantRecPM" placeholder="Cantidad"></td>
+        <td><input type="text" class="form-control" id="presentaMay" placeholder="Conversion" value="Caja"></td>
+        <td><input type="number" class="form-control" id="convPM_UM" placeholder="Conversion"></td>
+        <td><input type="number" class="form-control" id="cantRecUM" placeholder="Cantidad"></td>
+        <td class="textoDerecha">1250<td>
       </tr>
       <tr style="font-size:18px">
-        <td>Lechuga<td>
-        <td><input type="text" class="form-control" id="cantRecPM" placeholder="Cant"><td>
-        <td align="center">Bolsa<td>
-        <td><input type="text" class="form-control" id="convPM_UM" placeholder="Conversion"><td>
-        <td><input type="text" class="form-control" id="cantRecUM" placeholder="Cant"><td>
-        <td align="right">1250<td>
+        <td>Lechuga</td>
+        <td><input type="number" class="form-control" id="cantRecPM" placeholder="Cantidad"></td>
+        <td><input type="text" class="form-control" id="presentaMay" placeholder="Conversion" value="Bolsa"></td>
+        <td><input type="number" class="form-control" id="convPM_UM" placeholder="Conversion"></td>
+        <td><input type="number" class="form-control" id="cantRecUM" placeholder="Cantidad"></td>
+        <td class="textoDerecha">1250</td>
+      </tr>
+
+      <tr style="font-size:18px">
+        <td>Refresco Lata</td>
+        <td><input type="number" class="form-control" id="cantRecPM" placeholder="Cantidad"></td>
+        <td><input type="text" class="form-control" id="presentaMay" placeholder="Conversion" value="Unidad"></td>
+        <td><input type="number" class="form-control" id="convPM_UM" placeholder="Conversion"></td>
+        <td><input type="number" class="form-control" id="cantRecUM" placeholder="Cantidad"></td>
+        <td class="textoDerecha">234</td>
       </tr>
       <tr style="font-size:18px">
-        <td>Tomate<td>
-        <td><input type="text" class="form-control" id="cantRecPM" placeholder="Cant"><td>
-        <td align="center">Unidad<td>
-        <td><input type="text" class="form-control" id="convPM_UM" placeholder="Conversion"><td>
-        <td><input type="text" class="form-control" id="cantRecUM" placeholder="Cant"><td>
-        <td align="right">1250<td>
+        <td>Carne (Solomo)</td>
+        <td><input type="number" class="form-control" id="cantRecPM" placeholder="Cantidad"></td>
+        <td><input type="text" class="form-control" id="presentaMay" placeholder="Conversion" value="Kg"></td>
+        <td><input type="number" class="form-control" id="convPM_UM" placeholder="Conversion"></td>
+        <td><input type="number" class="form-control" id="cantRecUM" placeholder="Cantidad"></td>
+        <td class="textoDerecha">1250</td>
       </tr>
       <tr style="font-size:18px">
-        <td>Refresco Lata<td>
-        <td><input type="text" class="form-control" id="cantRecPM" placeholder="Cant"><td>
-        <td align="center">Unidad<td>
-        <td><input type="text" class="form-control" id="convPM_UM" placeholder="Conversion"><td>
-        <td><input type="text" class="form-control" id="cantRecUM" placeholder="Cant"><td>
-        <td align="right">234<td>
+        <td>Tequeños</td>
+        <td><input type="number" class="form-control" id="cantRecPM" placeholder="Cantidad"></td>
+        <td><input type="text" class="form-control" id="presentaMay" placeholder="Conversion" value="Unidad"></td>
+        <td><input type="number" class="form-control" id="convPM_UM" placeholder="Conversion"></td>
+        <td><input type="number" class="form-control" id="cantRecUM" placeholder="Cantidad"></td>
+        <td class="textoDerecha">234</td>
       </tr>
-      <tr style="font-size:18px">
-        <td>Carne (Solomo)<td>
-        <td><input type="text" class="form-control" id="cantRecPM" placeholder="Cant"><td>
-        <td align="center">Kg<td>
-        <td><input type="text" class="form-control" id="convPM_UM" placeholder="Conversion"><td>
-        <td><input type="text" class="form-control" id="cantRecUM" placeholder="Cant"><td>
-        <td align="right">1250<td>
-      </tr>
-      <tr style="font-size:18px">
-        <td>Tequeños<td>
-        <td><input type="text" class="form-control" id="cantRecPM" placeholder="Cant"><td>
-        <td align="center">Unidad<td>
-        <td><input type="text" class="form-control" id="convPM_UM" placeholder="Conversion"><td>
-        <td><input type="text" class="form-control" id="cantRecUM" placeholder="Cant"><td>
-        <td align="right">234<td>
+      <tr>
+        <td colspan="6">
+          <div class="btn-group">
+            <div class="btn btn-success" name="img" ngf-select="true" ng-model="file" accept="image/*">
+              <span class="glyphicon glyphicon-plus-sign"> Agregar productos</span>
+            </div>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

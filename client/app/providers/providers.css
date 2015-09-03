@@ -1,7 +1,11 @@
-tbody {
+.tbodyClass {
   color:yellow;
 }
 
-thead {
+.theadClass {
   color:white;
+}
+
+.h1Class {
+  color:yellow;
 }

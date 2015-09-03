@@ -91,9 +91,9 @@ angular.module('coAppApp')
 			responsable:'Alejandro',
 			actividad:false,
 			detalle: {
-				detalle1:'detalle1 probando ando',
-				detalle2:'detalle2',
-				detalle13:'detalle300 huyaa'
+				detalle1:'La papelera fue encontrada en mal estado ',
+				detalle2:'El TV no esta sintonizando canales correctamente',
+				detalle13:'La puerta del baño fue pateada por un cliente'
 			  }
 		},
     {
@@ -101,21 +101,51 @@ angular.module('coAppApp')
 			responsable:'Maribel',
 			actividad:true,
 			detalle: {
-				detalle1:'detalle1 ivan 2',
-				detalle2:'detalle2',
-				detalle13:'detalle3'
+        detalle1:'La papelera fue encontrada en mal estado ',
+				detalle2:'El TV no esta sintonizando canales correctamente',
+				detalle13:'La puerta del baño fue pateada por un cliente'
 			  }
      },
      {
-			fecha:'03-08-2014 11:34',
-			responsable:'Manolo',
-			actividad:false,
-			detalle: {
-				detalle1:'detalle1 manolo 3',
-				detalle2:'detalle2',
-				detalle13:'detalle3'
-  			}
-  		}
+ 			fecha:'03-08-2014 11:34',
+ 			responsable:'Alejandro',
+ 			actividad:false,
+ 			detalle: {
+ 				detalle1:'La papelera fue encontrada en mal estado ',
+ 				detalle2:'El TV no esta sintonizando canales correctamente',
+ 				detalle13:'La puerta del baño fue pateada por un cliente'
+ 			  }
+ 		},
+     {
+ 			fecha:'02-08-2014 11:34',
+ 			responsable:'Maribel',
+ 			actividad:true,
+ 			detalle: {
+         detalle1:'La papelera fue encontrada en mal estado ',
+ 				detalle2:'El TV no esta sintonizando canales correctamente',
+ 				detalle13:'La puerta del baño fue pateada por un cliente'
+ 			  }
+      },
+      {
+  			fecha:'02-08-2014 11:34',
+  			responsable:'Maribel',
+  			actividad:true,
+  			detalle: {
+          detalle1:'La papelera fue encontrada en mal estado ',
+  				detalle2:'El TV no esta sintonizando canales correctamente',
+  				detalle13:'La puerta del baño fue pateada por un cliente'
+  			  }
+       },
+       {
+   			fecha:'03-08-2014 11:34',
+   			responsable:'Alejandro',
+   			actividad:false,
+   			detalle: {
+   				detalle1:'La papelera fue encontrada en mal estado ',
+   				detalle2:'El TV no esta sintonizando canales correctamente',
+   				detalle13:'La puerta del baño fue pateada por un cliente'
+   			  }
+   		},
     ];
 
   });

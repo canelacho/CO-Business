@@ -1,28 +1,28 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
   <div class="container">
-    <h1 style="color:yellow">Proveedores</h1>
+    <h1 class="h1Class">Proveedores</h1>
 
     <table class="table">
-      <thead>
+      <thead class="theadClass">
         <tr>
           <th>Nombre</th>
           <th>RUC</th>
-          <th>Telefono</th>
-          <th>Action</th>
+          <th>Teléfono</th>
+          <th>Acción</th>
           <th>&nbsp;</th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody class="tbodyClass">
         <tr>
           <td><input class="form-control" ng-model="contact.name"></td>
           <td><input class="form-control" ng-model="contact.email"></td>
           <td><input class="form-control" ng-model="contact.number"></td>
           <td><button class="btn btn-primary" ng-click="addContact()">Agregar</button> </td>
           <td><button class="btn btn-info" ng-click="update()">Actualizar</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Liberar</button></td>
-
         </tr>
+
         <tr>
           <td>Alimentos El Campo</td>
           <td>3483084534534 DV 4</td>
