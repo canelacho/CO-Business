@@ -23,35 +23,14 @@
           <td><button class="btn btn-info" ng-click="update()">Actualizar</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Liberar</button></td>
         </tr>
 
-        <tr>
-          <td>Alimentos El Campo</td>
-          <td>3483084534534 DV 4</td>
-          <td>4567-7654</td>
+        <tr ng-repeat="provider in dataProviders">
+          <td>{{ provider.name }}</td>
+          <td>{{ provider.ruc }}</td>
+          <td>{{ provider.phone }}</td>
           <td><button class="btn btn-danger" ng-click="remove(contact._id)">Eliminar</button></td>
           <td><button class="btn btn-warning" ng-click="edit(contact._id)">Editar</button></td>
         </tr>
-        <tr>
-          <td>Almacen DonTiriton</td>
-          <td>9485089322 DV 23</td>
-          <td>9984-4312</td>
-          <td><button class="btn btn-danger" ng-click="remove(contact._id)">Eliminar</button></td>
-          <td><button class="btn btn-warning" ng-click="edit(contact._id)">Editar</button></td>
-        </tr>
-        <tr>
-          <td>Rivas Smith</td>
-          <td>12398023-2343 DV 4</td>
-          <td>2423-2124</td>
-          <td><button class="btn btn-danger" ng-click="remove(contact._id)">Eliminar</button></td>
-          <td><button class="btn btn-warning" ng-click="edit(contact._id)">Editar</button></td>
-        </tr>
-
-        <tr ng-repeat="contact in contactlist">
-          <td>{{ contact.name }}</td>
-          <td>{{ contact.email }}</td>
-          <td>{{ contact.number }}</td>
-          <td><button class="btn btn-danger" ng-click="remove(contact._id)">Eliminar</button></td>
-          <td><button class="btn btn-warning" ng-click="edit(contact._id)">Editar</button></td>
-        </tr>
+        
       </tbody>
     </table>
   </div>
