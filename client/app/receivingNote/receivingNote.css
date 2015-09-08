@@ -10,6 +10,6 @@ input[type="number"] {
   text-align:right;
 }
 
-input[type="text"] {
-  text-align:center;  
+#boxDataReceiving {
+  text-align:center;
 }
