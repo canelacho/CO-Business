@@ -16,7 +16,7 @@ var arrMensajes = [{pos:1,msg:'Nada sobre esta tierra puede detener al hombre qu
                 {pos:7,msg:'Siempre tienes razón, si crees que puedes, puedes, y si crees que no puedes, no puedes. De cualquier manera tienes razón.'}
                ];
 
-console.log(arrMensajes.length);
+// console.log(arrMensajes.length);
 $scope.txtMensajePositivismo = arrMensajes[Math.floor((Math.random()*(arrMensajes.length))+1)].msg;
 
 });

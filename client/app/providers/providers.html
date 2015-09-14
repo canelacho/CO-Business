@@ -16,21 +16,21 @@
 
       <tbody class="tbodyClass">
         <tr>
-          <td><input class="form-control" ng-model="contact.name"></td>
-          <td><input class="form-control" ng-model="contact.email"></td>
-          <td><input class="form-control" ng-model="contact.number"></td>
-          <td><button class="btn btn-primary" ng-click="addContact()">Agregar</button> </td>
+          <td><input class="form-control" ng-model="NewProvider.name"></td>
+          <td><input class="form-control" ng-model="NewProvider.ruc"></td>
+          <td><input class="form-control" ng-model="NewProvider.phone"></td>
+          <td><button class="btn btn-primary" ng-click="addNewProvider(NewProvider.name, NewProvider.ruc, NewProvider.phone)">Agregar</button> </td>
           <td><button class="btn btn-info" ng-click="update()">Actualizar</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Liberar</button></td>
         </tr>
 
-        <tr ng-repeat="provider in dataProviders">
+        <tr ng-repeat="provider in ProvidersList track by $index">
           <td>{{ provider.name }}</td>
           <td>{{ provider.ruc }}</td>
           <td>{{ provider.phone }}</td>
-          <td><button class="btn btn-danger" ng-click="remove(contact._id)">Eliminar</button></td>
-          <td><button class="btn btn-warning" ng-click="edit(contact._id)">Editar</button></td>
+          <td><button class="btn btn-danger" ng-click="remove(provider._id)">Eliminar</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(provider._id)">Editar</button></td>
         </tr>
-        
+
       </tbody>
     </table>
   </div>

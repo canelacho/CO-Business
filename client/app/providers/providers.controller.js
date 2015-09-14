@@ -1,28 +1,26 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('ProvidersCtrl', function ($scope) {
+  .controller('ProvidersCtrl', function ($scope, $http, Auth, User) {
     $scope.message = 'Hello';
 
-
-      var person1 = {
-        name: "Alimentos La Pradera",
-        ruc: "34734938475 DV-4",
-        phone: "6749-3456"
-      };
-      var person2 = {
-        name: "Dist EL Carmen",
-        ruc: "34734938475 DV-4",
-        phone: "6749-3456"
-      };
-      var person3 = {
-        name: "Comidas Crianza",
-        ruc: "34734938475 DV-4",
-        phone: "6749-3456"
-      };
+    //Cargar listado de proveedores
+    $scope.ProvidersList = [];
+      $http.get('../server/api/providers').success(function(providersList) {
+        $scope.ProvidersList = providersList;
+      });
 
 
-    var providerList = [person1,person2,person3];
-    $scope.dataProviders = providerList;
-    console.log(providerList[0]);
+
+    // Registrar nuevo proveedor
+    $scope.addNewProvider = {};
+    $scope.addNewProvider = function() {
+      $http.post('/api/Providers', {
+        name: $scope.NewProvider.name,
+        ruc: $scope.NewProvider.ruc,
+        phone: $scope.NewProvider.phone
+      }),
+      console.log('Estoy enviando la data y el nombre que va es: ' + $scope.NewProvider.name, $scope.NewProvider.ruc, $scope.NewProvider.phone );
+    }
+
   });
