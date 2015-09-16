@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth, User) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
