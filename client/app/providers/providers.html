@@ -3,6 +3,8 @@
   <div class="container">
     <h1 class="h1Class">Proveedores</h1>
 
+    <!-- Create FORM -->
+    <form ng-submit="addNewProvider(form)" name="form" class="form" novalidate>
     <table class="table">
       <thead class="theadClass">
         <tr>
@@ -19,16 +21,21 @@
           <td><input class="form-control" ng-model="NewProvider.name"></td>
           <td><input class="form-control" ng-model="NewProvider.ruc"></td>
           <td><input class="form-control" ng-model="NewProvider.phone"></td>
-          <td><button class="btn btn-primary" ng-click="addNewProvider(NewProvider.name, NewProvider.ruc, NewProvider.phone)">Agregar</button> </td>
+
+          <td><button type="submit" class="btn btn-primary">Agregar</button></td>
+
+          <!-- <td><button class="btn btn-primary" ng-click="addNewProvider(NewProvider.name, NewProvider.ruc, NewProvider.phone)">Agregar</button> </td> -->
+
           <td><button class="btn btn-info" ng-click="update()">Actualizar</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Liberar</button></td>
         </tr>
+      </form>
 
-        <tr ng-repeat="provider in ProvidersList track by $index">
+        <tr ng-repeat="provider in ProvidersList">
           <td>{{ provider.name }}</td>
           <td>{{ provider.ruc }}</td>
           <td>{{ provider.phone }}</td>
-          <td><button class="btn btn-danger" ng-click="remove(provider._id)">Eliminar</button></td>
-          <td><button class="btn btn-warning" ng-click="edit(provider._id)">Editar</button></td>
+          <td><button class="btn btn-danger" ng-click="deleteProvider(provider)">Eliminar</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(provider)">Editar</button></td>
         </tr>
 
       </tbody>

@@ -68,8 +68,8 @@
 
 
   <div>
+    <form name="managerOutForm">
     <ul>
-
     <!-- TASK 0 -->
     <li class="next-task">
       <div class="btn-group" data-toggle="buttons">
@@ -81,10 +81,12 @@
        </div>
        <button class="btn btn-primary" type="button" data-toggle="collapse"     data-target="#collapse{{ checklistOut[0].step }}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pencil"></span>
        </button>
+
        <div class="btn-group">
-         <div class="btn btn-info" ngf-select="true" ng-model="file0" accept="image/*"><span class="glyphicon glyphicon-camera"></span>
+         <div class="button btn btn-info" ngf-select ng-model="file0" ngf-multiple="true" ngf-keep="true" ngf-pattern="image/*" accept="image/*"><span class="glyphicon glyphicon-camera"></span>
          </div>
        </div>
+
        <button class="btn btn-warning" data-toggle="modal" data-target="#info{{ checklistOut[0].step }}"><span class="glyphicon glyphicon-info-sign"><span></button>
        <label> - {{ checklistOut[0].action }}</label>
        <div class="modal fade" id="info{{ checklistOut[0].step }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -97,11 +99,16 @@
            </div>
          </div>
        </div>
-       <img ngf-src="file0" class="img-prev"> <!-- image preview -->
        <div class="collapse" id="collapse{{ checklistOut[0].step }}">
          <!-- <div class="well"> -->
            <input type="text" class="form-control" id="comment0" ng-model="comment1" value="" placeholder="Escriba su observacion acerca de {{ checklistOut[0].action }} aqui">
          <!-- </div> -->
+       </div>
+        <!-- Image Preview -->
+        <!-- <div class="" ng-repeat="f in file0"> -->
+       <div>
+         <img ng-show="file0" ngf-src="file0[0]" class="img-prev">
+         <img ng-show="file0" ngf-src="file0[1]" class="img-prev">
        </div>
     </li> <!-- TASK 0 -->
 
@@ -910,8 +917,8 @@
        </div>
     </li> <!-- TASK 23 -->
 
-
     </ul>
+    </form>
   </div>
 
 </div>

@@ -3,6 +3,8 @@
 angular.module('coAppApp')
   .controller('ManagerOutCtrl', function ($scope, $http, $cookieStore, Auth, Upload) {
 
+    $scope.getCurrentUser = Auth.getCurrentUser;
+
     $scope.checklistTitle = 'CHECKLIST CIERRE GERENTE';
     $scope.checklistOut = [
     { step: 1, action: 'CIERRE PUERTA PRINCIPAL',
@@ -68,18 +70,32 @@ angular.module('coAppApp')
 
     // $scope.managerOut = {};
     // $scope.managerOut.task = checklistOut;
-    $scope.errors = {};
-    $scope.getCurrentUser = Auth.getCurrentUser().name;
+    // $scope.errors = {};
 
 
+      // $scope.imgObj = {};
+      // var step;
+      $scope.$watch('file0', function (file0) {
+        // var files = file0;
+        console.log(file0);
+        // step = 0;
+        // $scope.uploadFiles(file0);
+      });
 
-    // var token = $cookieStore.get('token');
+    var token = $cookieStore.get('token');
 
     // // images upload
-      $scope.imageUploads = [];
-      var uploadFiles = function (files) {
+      // $scope.imageUploads0 = {};
+      $scope.abort = function(index) {
+          $scope.upload[index].abort();
+          $scope.upload[index] = null;
+      };
+      $scope.uploadFiles = function (files) {
           $scope.upload = [];
-          console.log(files);
+          $scope.imageUploads = [];
+
+          // console.log(files);
+
           var loop = function (file, i) {
               $http.get('/api/uploads/s3Policy?mimeType='+ file.type).success(function(response) {
                   var s3Params = response;
@@ -107,7 +123,8 @@ angular.module('coAppApp')
                       // },
                       fields: {
                           'key' : 'coApp/' + $scope.getCurrentUser()._id + '/' + Math.round(Math.random()*100000000000),                                'AWSAccessKeyId': s3Params.AWSAccessKeyId,
-                          'acl' : 'public-read',                                'success_action_status' : '201',
+                          'acl' : 'public-read',
+                          'success_action_status' : '201',
                           'Policy' : s3Params.s3Policy,
                           'Signature' : s3Params.s3Signature,                                'Content-Type' : file.type
                       },
@@ -135,22 +152,17 @@ angular.module('coAppApp')
           };
 
           if (files && files.length) {
+            console.log(files.length);
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
                 file.progress = parseInt(0);
-                // $cookieStore.put('token', token);
                 loop(file, i);
+                $cookieStore.put('token', token);
             }
           }
 
       };
 
-
-      $scope.$watch('file0', function () {
-        var files = $scope.file0;
-        console.log(files);
-        uploadFiles(files);
-      });
 
 
       // Form
@@ -200,17 +212,6 @@ angular.module('coAppApp')
       //   this.push(i.src);
       // }, imgArray);
       // console.log(imgArray);
-
-      // var picture;
-      // for (var i = 0; i < imgArray.length; i++) {
-      //   picture = imgArray[i];
-      //   $scope.uploadFiles(picture);
-      // }
-
-        // $scope.$watch('files', function () {
-        //   console.log($scope.files);
-        //   $scope.uploadFiles($scope.files);
-        // });
 
 
 

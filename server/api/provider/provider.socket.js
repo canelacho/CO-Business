@@ -4,21 +4,21 @@
 
 'use strict';
 
-var Providers = require('./providers.model');
+var Provider = require('./provider.model');
 
 exports.register = function(socket) {
-  Providers.schema.post('save', function (doc) {
+  Provider.schema.post('save', function (doc) {
     onSave(socket, doc);
   });
-  Providers.schema.post('remove', function (doc) {
+  Provider.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('providers:save', doc);
+  socket.emit('provider:save', doc);
 }
 
 function onRemove(socket, doc, cb) {
-  socket.emit('providers:remove', doc);
+  socket.emit('provider:remove', doc);
 }

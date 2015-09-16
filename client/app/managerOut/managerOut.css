@@ -12,6 +12,7 @@ div.modal-body {
 
 img.img-prev {
   width: 200px;
+  margin-top: 5px;
 }
 
 div[id^="collapse"] {
