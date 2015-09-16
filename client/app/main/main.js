@@ -4,7 +4,7 @@ angular.module('coAppApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('main', {
-        url: '/wall',
+        url: '/login',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
 
