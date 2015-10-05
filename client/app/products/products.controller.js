@@ -11,24 +11,23 @@ angular.module('coAppApp')
 
     });
 
+    //agregar nuevo producto
     $scope.addNewProduct = {};
-    var newProduct;
     $scope.addNewProduct = function(form) {
+      console.log("pasando datos a la api");
       $http.post('/api/products', {
-        codigo: $scope.newProduct.codigo,
+        _id: $scope.newProduct.codigo,
         desc: $scope.newProduct.desc,
-        type: $scope.newProduct.type,
-        wholesale: $scope.newProduct.wholesale,
+        tipo: $scope.newProduct.tipo,
+        presMay: $scope.newProduct.presMay,
         conver: $scope.newProduct.conver,
         unit: $scope.newProduct.unit,
         min: $scope.newProduct.min,
         max: $scope.newProduct.max,
         cost: $scope.newProduct.cost
-      }).success(function(product){
-        newProduct = product;
       }),
       $scope.addNewProduct = '';
-      $location.path('/productView', newProduct);
+      // $location.path('/productView', newProduct); //esto es prueba
     }
 
   });

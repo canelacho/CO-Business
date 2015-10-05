@@ -3,7 +3,7 @@
 <div class="container">
 
 
-  <form class="form-horizontal" novalidate="true">
+  <form class="form-horizontal" ng-submit="addNewProduct(form)" name="form" novalidate>
 
     <h3>Nuevo Producto</h3>
     <hr>
@@ -11,7 +11,7 @@
     <div class="form-group">
       <label for="descripcion" class="col-sm-3 control-label">Codigo</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control inpSiz" id="descripcion" placeholder="codigo asignado al producto">
+        <input type="text" class="form-control inpSiz" id="codigo" ng-model="newProduct.codigo" placeholder="codigo asignado al producto">
       </div>
       <div class="col-sm-1">
         <button class="btn btn-warning" data-toggle="modal" data-target="#info_0"><span class="glyphicon glyphicon-info-sign"><span></button>
@@ -20,7 +20,7 @@
     <div class="form-group">
       <label for="descripcion" class="col-sm-3 control-label">Descripcion</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="descripcion" placeholder="Nombre o descripcion del producto">
+        <input type="text" class="form-control" id="descripcion" ng-model="newProduct.desc" placeholder="Nombre o descripcion del producto">
       </div>
       <div class="col-sm-1">
         <button class="btn btn-warning" data-toggle="modal" data-target="#info_1"><span class="glyphicon glyphicon-info-sign"><span></button>
@@ -29,7 +29,7 @@
     <div class="form-group">
       <label for="tipo" class="col-sm-3 control-label">Tipo</label>
       <div class="col-sm-4">
-        <select class="form-control" id="tipo">
+        <select class="form-control" id="tipo" ng-model="newProduct.tipo">
           <option value="" selected>Seleccione una opcion</option>
           <option value="Insumo">Materia Prima</option>
           <option value="Receta">Producto Terminado</option>
@@ -42,7 +42,7 @@
     <div class="form-group">
       <label for="presentacionMayor" class="col-sm-3 control-label">Presentacion de Mayor</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="presentacionMayor" placeholder="Caja, Saco, Bulto, Paquete">
+        <input type="text" class="form-control" id="presentacionMayor" ng-model="newProduct.presMay" placeholder="Caja, Saco, Bulto, Paquete">
       </div>
       <div class="col-sm-1">
         <button class="btn btn-warning" data-toggle="modal" data-target="#info_3"><span class="glyphicon glyphicon-info-sign"><span></button>
@@ -51,7 +51,7 @@
     <div class="form-group">
       <label for="conversion" class="col-sm-3 control-label">Conversion PM - UM</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="conversion" placeholder="De Present. Mayor a Unidad Manejo. ">
+        <input type="text" class="form-control" id="conversion" ng-model="newProduct.conver" placeholder="De Present. Mayor a Unidad Manejo. ">
       </div>
       <div class="col-sm-1">
         <button class="btn btn-warning" data-toggle="modal" data-target="#info_4"><span class="glyphicon glyphicon-info-sign"><span></button>
@@ -60,7 +60,7 @@
     <div class="form-group">
       <label for="unidadManejo" class="col-sm-3 control-label">Unidad de Manejo</label>
       <div class="col-sm-4">
-        <select class="form-control" id="tipo">
+        <select class="form-control" id="tipo" ng-model="newProduct.unit">
           <option value="" selected>Seleccione una opcion</option>
           <option value="Unidad" >Unidad</option>
           <option value="Kg" >Kilos</option>
@@ -78,7 +78,7 @@
     <div class="form-group">
       <label for="Minimo" class="col-sm-3 control-label">Cantidad Minima</label>
       <div class="col-sm-4">
-        <input type="number" class="form-control" id="Minimo" placeholder="Cantidad Minima en almacen">
+        <input type="number" class="form-control" id="Minimo" ng-model="newProduct.min" placeholder="Cantidad Minima en almacen">
       </div>
       <div class="col-sm-1">
         <button class="btn btn-warning" data-toggle="modal" data-target="#info_6"><span class="glyphicon glyphicon-info-sign"><span></button>
@@ -87,7 +87,7 @@
     <div class="form-group">
       <label for="maximo" class="col-sm-3 control-label">Cantidad Maxima</label>
       <div class="col-sm-4">
-        <input type="number" class="form-control" id="maximo" placeholder="Cantidad Maxima en almacen">
+        <input type="number" class="form-control" id="maximo" ng-model="newProduct.max" placeholder="Cantidad Maxima en almacen">
       </div>
       <div class="col-sm-1">
         <button class="btn btn-warning" data-toggle="modal" data-target="#info_7"><span class="glyphicon glyphicon-info-sign"><span></button>
@@ -96,7 +96,7 @@
     <div class="form-group">
       <label for="costoPromedio" class="col-sm-3 control-label">Costo Promedio</label>
       <div class="col-sm-4">
-        <input type="number" class="form-control" id="costoPromedio" placeholder="Costo Promedio producto">
+        <input type="number" class="form-control" id="costoPromedio" ng-model="newProduct.cost" placeholder="Costo Promedio producto">
       </div>
       <div class="col-sm-1">
         <button class="btn btn-warning" data-toggle="modal" data-target="#info_8"><span class="glyphicon glyphicon-info-sign"><span></button>
@@ -198,8 +198,9 @@
 
     <div class="form-group">
       <div class="col-sm-offset-3 col-sm-2">
-        <button type="submit" class="btn btn-primary" ng-click="sendNotify(formNotify)">Guardar Producto</button>
+        <button type="submit" class="btn btn-primary">Guardar Producto</button>
       </div>
     </div>
+
   </form>
 </div>
