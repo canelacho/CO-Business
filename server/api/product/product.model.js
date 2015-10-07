@@ -10,9 +10,11 @@ var ProductSchema = new Schema({
   presMay: String,
   conver: String,
   unit: String,
+  crit: Number;
   min: Number,
   max: Number,
-  cost: Number
+  cost: Number,
+  avail: Number
 });
 
 module.exports = mongoose.model('Product', ProductSchema);

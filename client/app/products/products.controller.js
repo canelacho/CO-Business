@@ -14,7 +14,6 @@ angular.module('coAppApp')
     //agregar nuevo producto
     $scope.addNewProduct = {};
     $scope.addNewProduct = function(form) {
-      console.log("pasando datos a la api");
       $http.post('/api/products', {
         _id: $scope.newProduct.codigo,
         desc: $scope.newProduct.desc,
