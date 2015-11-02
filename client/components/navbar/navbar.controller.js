@@ -44,10 +44,6 @@ angular.module('coAppApp')
         'link': '/reportList'
       },
       {
-        'title': 'Balance',
-        'link': '/balance'
-      },
-      {
         'title': 'Notificaciones',
         'link': '/notifyEvent'
       }
