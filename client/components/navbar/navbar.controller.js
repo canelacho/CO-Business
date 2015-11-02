@@ -24,7 +24,7 @@ angular.module('coAppApp')
         'link': '/invoiceRegister'
       },
       {
-        'title': 'Cierre de Sesion',
+        'title': 'Cierre de Ventas',
         'link': '/closingStatement'
       },
       {
