@@ -10,7 +10,7 @@ var ProductSchema = new Schema({
   presMay: String,
   conver: String,
   unit: String,
-  crit: Number;
+  crit: Number,
   min: Number,
   max: Number,
   cost: Number,

@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('coAppApp')
-  .controller('ProductsReportCtrl', function ($scope) {
+  .controller('ProductsReportCtrl', function ($scope, $http, socket, Auth, User) {
     $scope.message = 'Hello';
   });

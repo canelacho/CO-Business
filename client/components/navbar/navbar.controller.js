@@ -44,10 +44,6 @@ angular.module('coAppApp')
         'link': '/reportList'
       },
       {
-        'title': 'Listado Manager Out',
-        'link': '/managerOutReport'
-      },
-      {
         'title': 'Balance',
         'link': '/balance'
       },
